@@ -1,7 +1,15 @@
-Team CSP3 Main Project - Team Project 3 Course
+# OBASHI - Where does my data flow?
+ An Android app created to show where data flows from different devices in a room by using Augmented Reality.
+ 
+# Built with
 
-Hello from Sho
+ * [Android Studio](https://developer.android.com/studio) - To create the base android app
+ * [ARCore](https://developers.google.com/ar) - AR API used
 
-henlo!
-
-Hello
+# Authors
+ * **Jose Antonio Rodriguez Bacallado**
+ * **Nicholas Sperry Grandhomme**
+ * **Hassan Shahid**
+ * **Shourya Verma**
+ * **Stephen Considine**
+ 
