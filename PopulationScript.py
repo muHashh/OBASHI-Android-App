@@ -6,7 +6,7 @@ connection = mysql.connector.connect(host='localhost',
                                      database='obashischema',
                                      user='root',
                                      password='Contraseña')
-
+cursor = connection.cursor()
 print("Connected!")
 # Each list represents a row. The columns are, in order, name, description,
 # X coordinate, Y coordinate, Z coordinate
@@ -20,7 +20,6 @@ data = ['Request to mainframe', 'Respond from mainframe',
         'Printing request', 'Phone backup']
 # Each list represent a relation. The elements of each list are, in order,
 # the name of the sender, the name of the receiver and the name of the data.
-# This needs to be changed later
 connections = [['Lenovo ThinkPad P71', 'Main server', 'Request to mainframe'],
                ['Surface Pro 8', 'Main server', 'Request to mainframe'],
                ['Main server', 'Lenovo ThinkPad P71', 'Respond from mainframe'],
@@ -29,10 +28,10 @@ connections = [['Lenovo ThinkPad P71', 'Main server', 'Request to mainframe'],
                ['Surface Pro 8', 'Samsung Printer', 'Printing request'],
                ['Surface Pro 8', 'iPhone 8', 'Phone backup']]
 
-cursor = connection.cursor()
 for row in devices:
+    # Checks if the device is already in the database
+    # If not, inserts it
     sql_select_Query = "SELECT * FROM Devices Where Name = %s"
-    cursor = connection.cursor()
     cursor.execute(sql_select_Query, [row[0]])
     records = cursor.fetchall()
     if len(records) == 0:
@@ -41,8 +40,9 @@ for row in devices:
         result = cursor.execute(mySql_insert_query, row)
 
 for d in data:
+    # Checks if the data flow is already in the database
+    # If not, inserts it
     sql_select_Query = "SELECT * FROM Data Where Name = %s"
-    cursor = connection.cursor()
     cursor.execute(sql_select_Query, [d])
     records = cursor.fetchall()
     if len(records) == 0:
@@ -50,21 +50,22 @@ for d in data:
         result = cursor.execute(mySql_insert_query, [d])
 
 for dataConnection in connections:
+    # Gets the deviceID of the sender
     sql_select_Query = "SELECT DeviceID FROM Devices WHERE Name = %s"
-    cursor = connection.cursor()
     cursor.execute(sql_select_Query, [dataConnection[0]])
     senderID = cursor.fetchall()[0][0]
+    # Gets the deviceID of the receiver
     sql_select_Query = "SELECT DeviceID FROM Devices WHERE Name = %s"
-    cursor = connection.cursor()
     cursor.execute(sql_select_Query, [dataConnection[1]])
     receiverID = cursor.fetchall()[0][0]
+    # Gets the dataID of the data flow
     sql_select_Query = "SELECT DataID FROM Data WHERE Name = %s"
-    cursor = connection.cursor()
     cursor.execute(sql_select_Query, [dataConnection[2]])
     dataID = cursor.fetchall()[0][0]
+    # Checks if dataConnection is already in the database
+    # If not, inserts it
     sql_select_Query = """SELECT * FROM SendTo Where SenderID = %s AND
                         ReceiverID = %s AND DataID = %s"""
-    cursor = connection.cursor()
     cursor.execute(sql_select_Query, [senderID, receiverID, dataID])
     records = cursor.fetchall()
     if len(records) == 0:
