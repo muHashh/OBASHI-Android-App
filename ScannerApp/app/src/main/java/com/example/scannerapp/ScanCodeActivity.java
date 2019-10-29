@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.scannerapp.ui.home.HomeFragment;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -21,7 +22,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
     @Override
     public void handleResult(Result result){
 
-        MainActivity.resultTextView.setText(result.getText());
+        HomeFragment.resultTextView.setText(result.getText());
         onBackPressed();
     }
 
