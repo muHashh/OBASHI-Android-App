@@ -31,21 +31,47 @@ connections = [['Lenovo ThinkPad P71', 'Main server', 'Request to mainframe'],
 
 cursor = connection.cursor()
 for row in devices:
-    mySql_insert_query = """INSERT INTO devices (Name, Description, X_coord,
-                        Y_coord, Z_coord) VALUES (%s, %s, %s, %s, %s) """
-    result = cursor.execute(mySql_insert_query, row)
+    sql_select_Query = "SELECT * FROM Devices Where Name = %s"
+    cursor = connection.cursor()
+    cursor.execute(sql_select_Query, [row[0]])
+    records = cursor.fetchall()
+    if len(records) == 0:
+        mySql_insert_query = """INSERT INTO devices (Name, Description, X_coord,
+                            Y_coord, Z_coord) VALUES (%s, %s, %s, %s, %s) """
+        result = cursor.execute(mySql_insert_query, row)
 
 for d in data:
-    mySql_insert_query = """INSERT INTO data (Name) VALUES (%s)"""
-    name = [d]
-    result = cursor.execute(mySql_insert_query, name)
+    sql_select_Query = "SELECT * FROM Data Where Name = %s"
+    cursor = connection.cursor()
+    cursor.execute(sql_select_Query, [d])
+    records = cursor.fetchall()
+    if len(records) == 0:
+        mySql_insert_query = """INSERT INTO data (Name) VALUES (%s)"""
+        result = cursor.execute(mySql_insert_query, [d])
 
-'''
-for connection in connections:
-    mySql_insert_query = """INSERT INTO sendto (SenderID, ReceiverID, DataID)
-                        VALUES (%s, %s, %s) """
-    result = cursor.execute(mySql_insert_query, connection)
-'''
+for dataConnection in connections:
+    sql_select_Query = "SELECT DeviceID FROM Devices WHERE Name = %s"
+    cursor = connection.cursor()
+    cursor.execute(sql_select_Query, [dataConnection[0]])
+    senderID = cursor.fetchall()[0][0]
+    sql_select_Query = "SELECT DeviceID FROM Devices WHERE Name = %s"
+    cursor = connection.cursor()
+    cursor.execute(sql_select_Query, [dataConnection[1]])
+    receiverID = cursor.fetchall()[0][0]
+    sql_select_Query = "SELECT DataID FROM Data WHERE Name = %s"
+    cursor = connection.cursor()
+    cursor.execute(sql_select_Query, [dataConnection[2]])
+    dataID = cursor.fetchall()[0][0]
+    sql_select_Query = """SELECT * FROM SendTo Where SenderID = %s AND
+                        ReceiverID = %s AND DataID = %s"""
+    cursor = connection.cursor()
+    cursor.execute(sql_select_Query, [senderID, receiverID, dataID])
+    records = cursor.fetchall()
+    if len(records) == 0:
+        mySql_insert_query = """INSERT INTO sendto (SenderID, ReceiverID,
+                            DataID) VALUES (%s, %s, %s) """
+        result = cursor.execute(mySql_insert_query,
+                                [senderID, receiverID, dataID])
 
 connection.commit()
 print("Records inserted successfully into tables")
