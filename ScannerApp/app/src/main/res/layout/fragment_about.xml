@@ -75,7 +75,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Developers: \n\nHassan Shahid\nShourya Verma\nSteg Considine\nNico Sperry\nJose Roudrígez" />
-
-    </androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
