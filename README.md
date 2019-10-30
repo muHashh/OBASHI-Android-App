@@ -7,9 +7,12 @@
  * [ARCore](https://developers.google.com/ar) - AR API used
 
 # Authors
- * **Jose Antonio Rodriguez Bacallado**
- * **Nicholas Sperry Grandhomme**
- * **Hassan Shahid**
- * **Shourya Verma**
- * **Stephen Considine**
+ * **Jose Antonio Rodriguez Bacallado 2300456r@student.gla.ac.uk**
+ * **Nicholas Sperry Grandhomme 2306707s@student.gla.ac.uk**
+ * **Hassan Shahid 2325611s@student.gla.ac.uk**
+ * **Shourya Verma 2308432v@student.gla.ac.uk**
+ * **Stephen Considine 2324936c@student.gla.ac.uk**
+
+### Team Coach
+ * **Nestor Skiadas 2258257s@student.gla.ac.uk**
  
