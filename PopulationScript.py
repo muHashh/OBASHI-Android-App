@@ -5,7 +5,7 @@ from mysql.connector import errorcode
 connection = mysql.connector.connect(host='localhost',
                                      database='obashischema',
                                      user='root',
-                                     password='Contraseña')
+                                     password='Obashi')
 cursor = connection.cursor()
 print("Connected!")
 # Each list represents a row. The columns are, in order, name, description,
