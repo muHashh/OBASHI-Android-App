@@ -20,7 +20,7 @@ public class ArFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         arViewModel =
                 ViewModelProviders.of(this).get(ArViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.fragment_ar, container, false);
 
         return root;
     }
