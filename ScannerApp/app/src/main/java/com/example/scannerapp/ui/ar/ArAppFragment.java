@@ -43,15 +43,8 @@ public class ArAppFragment extends Fragment {
                 ViewModelProviders.of(this).get(ArAppViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ar, container, false);
 
-        Button button = (Button)root.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ar.class);
-                startActivity(intent);
-            }
-        });
+        Intent intent = new Intent(getActivity(), ar.class);
+        startActivity(intent);
 
         return root;
     }
