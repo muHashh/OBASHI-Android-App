@@ -42,9 +42,8 @@ public class ArAppFragment extends Fragment {
         arAppViewModel =
                 ViewModelProviders.of(this).get(ArAppViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ar, container, false);
-
-        Intent intent = new Intent(getActivity(), ar.class);
-        startActivity(intent);
+        
+        startActivity(new Intent(getActivity(), ar.class));
 
         return root;
     }
