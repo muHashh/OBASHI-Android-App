@@ -14,7 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="com.google.ar.core" android:value="required" />
+
         <activity android:name=".ScanCodeActivity"></activity>
+        <activity android:name=".ar"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

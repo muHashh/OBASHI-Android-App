@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ArViewModel extends ViewModel {
+public class ArAppViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ArViewModel() {
+    public ArAppViewModel() {
         mText = new MutableLiveData<>();
     }
 
