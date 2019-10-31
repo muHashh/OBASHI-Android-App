@@ -24,7 +24,6 @@ import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
-
 public class ar extends AppCompatActivity {
     private static final String TAG = ar.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
@@ -71,6 +70,7 @@ public class ar extends AppCompatActivity {
                     transformableNode.setRenderable(dinoRenderable);
                     transformableNode.select();
                 });
+
     }
 
     public static boolean checkDevice(final Activity activity) {

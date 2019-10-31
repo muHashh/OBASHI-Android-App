@@ -42,10 +42,16 @@ public class ArAppFragment extends Fragment {
         arAppViewModel =
                 ViewModelProviders.of(this).get(ArAppViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ar, container, false);
-        
-        startActivity(new Intent(getActivity(), ar.class));
+
+        startActivityForResult(new Intent(getActivity(), ar.class), 1);
 
         return root;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        startActivity(new Intent(getActivity(), MainActivity.class));
     }
 }
 
