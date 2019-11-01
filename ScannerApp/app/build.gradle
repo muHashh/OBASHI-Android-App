@@ -60,3 +60,8 @@ sceneform.asset('sampledata/model.obj',
         'default',
         'sampledata/model.sfa',
         'src/main/assets/model')
+
+sceneform.asset('sampledata/chungus.obj',
+        'default',
+        'sampledata/chungus.sfa',
+        'src/main/assets/chungus')

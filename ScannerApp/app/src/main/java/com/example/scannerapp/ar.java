@@ -17,19 +17,29 @@ import com.example.scannerapp.ui.ar.ArAppViewModel;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
+import com.google.ar.core.Frame;
 
+import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.ArSceneView;
+import com.google.ar.sceneform.FrameTime;
+import com.google.ar.sceneform.rendering.ShapeFactory;
+import com.google.ar.sceneform.math.Vector3;
+import com.google.ar.sceneform.rendering.Color;
+import com.google.ar.sceneform.rendering.MaterialFactory;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
+
+import java.util.Collection;
 
 public class ar extends AppCompatActivity {
     private static final String TAG = ar.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
 
-    private ModelRenderable ModelRenderable ;
-    private ArFragment arCoreFragment;
+    private ModelRenderable MRenderable ;
+    private ArFragment arFragment;
+    private boolean isModelPlaced;
 
     @RequiresApi(api = VERSION_CODES.N)
     @Override
@@ -41,36 +51,48 @@ public class ar extends AppCompatActivity {
         }
 
         setContentView(R.layout.ar);
-        arCoreFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
+        arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
 
-        if (Build.VERSION.SDK_INT >= VERSION_CODES.N) {
-            ModelRenderable.builder()
-                    .setSource(this, R.raw.model)
-                    .build()
-                    .thenAccept(renderable -> ModelRenderable  = renderable)
-                    .exceptionally(
-                            throwable -> {
-                                Log.e(TAG, "Unable to load renderable");
-                                return null;
-                            });
+        arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
+
+    }
+
+    private void onUpdate(FrameTime frameTime) {
+
+        if (isModelPlaced) {
+            return;
         }
 
-        arCoreFragment.setOnTapArPlaneListener(
-                (HitResult hitResult, Plane plane, MotionEvent motionEvent) -> {
-                    if (ModelRenderable == null) {
-                        return;
-                    }
+        Frame frame = arFragment.getArSceneView().getArFrame();
 
-                    Anchor anchor = hitResult.createAnchor();
+        Collection<Plane> planes = frame.getUpdatedTrackables(Plane.class);
+
+        for (Plane plane: planes) {
+            if (plane.getTrackingState() == TrackingState.TRACKING) {
+                Anchor anchor = plane.createAnchor(plane.getCenterPose());
+
+                makeCube(anchor);
+
+                break;
+            }
+        }
+    }
+
+    private void makeCube(Anchor anchor) {
+
+        isModelPlaced = true;
+
+        MaterialFactory
+                .makeOpaqueWithColor(this, new Color(android.graphics.Color.RED))
+                .thenAccept(material -> {
+
+                    ModelRenderable cubeRenderable = ShapeFactory.makeCube(new Vector3(0.2f, 0.2f, 0.2f),
+                            new Vector3(0f, 0.2f, 0f), material);
+
                     AnchorNode anchorNode = new AnchorNode(anchor);
-                    anchorNode.setParent(arCoreFragment.getArSceneView().getScene());
-
-                    TransformableNode transformableNode = new TransformableNode(arCoreFragment.getTransformationSystem());
-                    transformableNode.setParent(anchorNode);
-                    transformableNode.setRenderable(ModelRenderable);
-                    transformableNode.select();
+                    anchorNode.setRenderable(cubeRenderable);
+                    arFragment.getArSceneView().getScene().addChild(anchorNode);
                 });
-
     }
 
     public static boolean checkDevice(final Activity activity) {
