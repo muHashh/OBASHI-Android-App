@@ -51,7 +51,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         ScannerView.setResultHandler(this);
         ScannerView.startCamera();
     }
-    
+
     private void verifyPermissions() {
         Log.d(TAG, "Verifying permissions: asking user for camera permission");
         String[] permissions = {Manifest.permission.CAMERA};
