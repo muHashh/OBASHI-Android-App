@@ -28,7 +28,7 @@ public class ar extends AppCompatActivity {
     private static final String TAG = ar.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
 
-    private ModelRenderable renderable ;
+    private ModelRenderable ModelRenderable ;
     private ArFragment arCoreFragment;
 
     @RequiresApi(api = VERSION_CODES.N)
@@ -47,7 +47,7 @@ public class ar extends AppCompatActivity {
             ModelRenderable.builder()
                     .setSource(this, R.raw.model)
                     .build()
-                    .thenAccept(renderable -> renderable  = renderable)
+                    .thenAccept(renderable -> ModelRenderable  = renderable)
                     .exceptionally(
                             throwable -> {
                                 Log.e(TAG, "Unable to load renderable");
@@ -57,7 +57,7 @@ public class ar extends AppCompatActivity {
 
         arCoreFragment.setOnTapArPlaneListener(
                 (HitResult hitResult, Plane plane, MotionEvent motionEvent) -> {
-                    if (renderable == null) {
+                    if (ModelRenderable == null) {
                         return;
                     }
 
@@ -67,7 +67,7 @@ public class ar extends AppCompatActivity {
 
                     TransformableNode transformableNode = new TransformableNode(arCoreFragment.getTransformationSystem());
                     transformableNode.setParent(anchorNode);
-                    transformableNode.setRenderable(renderable);
+                    transformableNode.setRenderable(ModelRenderable);
                     transformableNode.select();
                 });
 
