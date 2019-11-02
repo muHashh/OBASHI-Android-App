@@ -83,11 +83,11 @@ public class ar extends AppCompatActivity {
         isModelPlaced = true;
 
         MaterialFactory
-                .makeOpaqueWithColor(this, new Color(android.graphics.Color.RED))
+                .makeTransparentWithColor(this, new Color(new Color(1, 1, 1, (float)0.5)))
                 .thenAccept(material -> {
 
                     ModelRenderable cubeRenderable = ShapeFactory.makeCube(new Vector3(0.2f, 0.2f, 0.2f),
-                            new Vector3(0f, 0.2f, 0f), material);
+                            new Vector3(0f, 0.1f, 0f), material);
 
                     AnchorNode anchorNode = new AnchorNode(anchor);
                     anchorNode.setRenderable(cubeRenderable);
