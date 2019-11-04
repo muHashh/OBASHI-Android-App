@@ -19,7 +19,7 @@ if(isset($_POST['senderID'])&&isset($_POST['receiverID'])&&isset($_POST['dataID'
 		//Check if data got inserted
 		if($stmt->affected_rows == 1){
 			$response["success"] = 1;			
-			$response["message"] = "Send to relation Successfully Added";			
+			$response["message"] = "Send to relation successfully added";			
 			
 		}else{
 			//Some error while inserting
@@ -35,7 +35,7 @@ if(isset($_POST['senderID'])&&isset($_POST['receiverID'])&&isset($_POST['dataID'
 }else{
 	//Mandatory parameters are missing
 	$response["success"] = 0;
-	$response["message"] = "missing mandatory parameters";
+	$response["message"] = "Missing mandatory parameters";
 }
 //Displaying JSON response
 echo json_encode($response);

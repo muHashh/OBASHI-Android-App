@@ -3,33 +3,32 @@ include 'db/db_connect.php';
 $response = array();
  
 //Check for mandatory parameters
-if(isset($_POST['name'])&&isset($_POST['description'])&&isset($_POST['X_coord'])&&isset($_POST['Y_coord'])&&isset($_POST['Z_coord'])){
-	$name = $_POST['name'];
-	$description = $_POST['description'];
+if(isset($_POST['DeviceID'])&&isset($_POST['X_coord'])&&isset($_POST['Y_coord'])&&isset($_POST['Z_coord'])){
+	$DeviceID = $_POST['DeviceID'];
 	$X_coord = $_POST['X_coord'];
 	$Y_coord = $_POST['Y_coord'];
 	$Z_coord = $_POST['Z_coord'];
 	
-	//Query to insert a device
-	$query = "INSERT INTO devices(name, description, X_coord, Y_coord, Z_coord) VALUES (?,?,?,?,?)";
+	//Query to update the location of a device
+	$query = "UPDATE Devices SET X_coord=?,Y_coord=?,Z_coord=? WHERE DeviceID=?";
 	//Prepare the query
 	if($stmt = $con->prepare($query)){
 		//Bind parameters
-		$stmt->bind_param("ssis",$name,$description,$X_coord,$Y_coord,$Z_coord);
+		$stmt->bind_param("ssisi",$X_coord,$Y_coord,$Z_coord,$DeviceID);
 		//Exceting MySQL statement
 		$stmt->execute();
-		//Check if data got inserted
+		//Check if data got updated
 		if($stmt->affected_rows == 1){
 			$response["success"] = 1;			
-			$response["message"] = "Device successfully added";			
+			$response["message"] = "Device location successfully updated";
 			
 		}else{
-			//Some error while inserting
+			//When the device is not found
 			$response["success"] = 0;
-			$response["message"] = "Error while adding device";
+			$response["message"] = "Device not found";
 		}					
 	}else{
-		//Some error while inserting
+		//Some error while updating
 		$response["success"] = 0;
 		$response["message"] = mysqli_error($con);
 	}

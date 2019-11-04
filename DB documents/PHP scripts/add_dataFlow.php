@@ -17,7 +17,7 @@ if(isset($_POST['name'])){
 		//Check if data got inserted
 		if($stmt->affected_rows == 1){
 			$response["success"] = 1;			
-			$response["message"] = "Data flow Successfully Added";			
+			$response["message"] = "Data flow successfully added";			
 			
 		}else{
 			//Some error while inserting
@@ -33,7 +33,7 @@ if(isset($_POST['name'])){
 }else{
 	//Mandatory parameters are missing
 	$response["success"] = 0;
-	$response["message"] = "missing mandatory parameters";
+	$response["message"] = "Missing mandatory parameters";
 }
 //Displaying JSON response
 echo json_encode($response);
