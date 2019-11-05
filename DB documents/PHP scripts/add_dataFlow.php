@@ -11,7 +11,7 @@ if(isset($_POST['name'])){
 	//Prepare the query
 	if($stmt = $con->prepare($query)){
 		//Bind parameters
-		$stmt->bind_param("ssis",$name);
+		$stmt->bind_param("s",$name);
 		//Exceting MySQL statement
 		$stmt->execute();
 		//Check if data got inserted

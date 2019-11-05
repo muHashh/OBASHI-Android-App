@@ -13,7 +13,7 @@ if(isset($_POST['senderID'])&&isset($_POST['receiverID'])&&isset($_POST['dataID'
 	//Prepare the query
 	if($stmt = $con->prepare($query)){
 		//Bind parameters
-		$stmt->bind_param("ssis",$senderID,$receiverID,$dataID);
+		$stmt->bind_param("iii",$senderID,$receiverID,$dataID);
 		//Exceting MySQL statement
 		$stmt->execute();
 		//Check if data got inserted

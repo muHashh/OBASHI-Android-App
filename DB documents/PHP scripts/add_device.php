@@ -15,7 +15,7 @@ if(isset($_POST['name'])&&isset($_POST['description'])&&isset($_POST['X_coord'])
 	//Prepare the query
 	if($stmt = $con->prepare($query)){
 		//Bind parameters
-		$stmt->bind_param("ssis",$name,$description,$X_coord,$Y_coord,$Z_coord);
+		$stmt->bind_param("ssiii",$name,$description,$X_coord,$Y_coord,$Z_coord);
 		//Exceting MySQL statement
 		$stmt->execute();
 		//Check if data got inserted

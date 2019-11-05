@@ -5,7 +5,7 @@ $response = array();
  
 //Check for mandatory parameter DeviceID
 if(isset($_GET['DeviceID'])){
-	$DeviceID = $GET['DeviceID'];
+	$DeviceID = $_GET['DeviceID'];
 	//Query to fetch the details of a device
 	$query = "SELECT * FROM Devices WHERE DeviceID=?";
 	//Prepare the query

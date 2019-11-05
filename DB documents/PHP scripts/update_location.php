@@ -14,7 +14,7 @@ if(isset($_POST['DeviceID'])&&isset($_POST['X_coord'])&&isset($_POST['Y_coord'])
 	//Prepare the query
 	if($stmt = $con->prepare($query)){
 		//Bind parameters
-		$stmt->bind_param("ssisi",$X_coord,$Y_coord,$Z_coord,$DeviceID);
+		$stmt->bind_param("iiii",$X_coord,$Y_coord,$Z_coord,$DeviceID);
 		//Exceting MySQL statement
 		$stmt->execute();
 		//Check if data got updated
