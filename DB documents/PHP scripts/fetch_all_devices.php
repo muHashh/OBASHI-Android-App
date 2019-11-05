@@ -1,7 +1,7 @@
 <?php
 include 'db/db_connect.php';
-//Query to select device name
-$query = "SELECT name FROM devices";
+//Query to select device name and ID for all devices
+$query = "SELECT DeviceID, Name FROM Devices";
 $result = array();
 $devicesArray = array();
 $response = array();
