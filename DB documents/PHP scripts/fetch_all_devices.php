@@ -8,12 +8,13 @@ $response = array();
 //Prepare the query
 if($stmt = $con->prepare($query)){
 	$stmt->execute();
-	//Bind the fetched data to $name
+	//Bind the fetched data to $DeviceID and $Name
 	$stmt->bind_result($name);
 	//Fetch 1 row at a time					
 	while($stmt->fetch()){
 		//Populate the device array
-		$devicesArray["name"] = $name;
+		$devicesArray["DeviceID"] = $DeviceID;
+		$devicesArray["Name"] = $Name;
 		$result[]=$devicesArray;
 		
 	}
