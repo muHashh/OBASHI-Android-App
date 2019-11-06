@@ -82,7 +82,7 @@
             android:textAlignment="center"
             android:textColor="@color/whiteColor"
             android:textSize="17dp"
-            android:text="Developers: \n\nHassan Shahid\nShourya Verma\nSteg Considine\nNico Sperry\nJosé Rodríguez" />
+            android:text="Developers: \n\nHassan Shahid\nShourya Verma\nSteg Considine\nNico Sperry\nJose Roudrígez" />
 </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
