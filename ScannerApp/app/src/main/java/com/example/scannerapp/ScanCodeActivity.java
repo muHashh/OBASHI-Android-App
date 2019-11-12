@@ -86,6 +86,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         // so for deployment it should be changed for an actual address
         String KEY_SUCCESS = "success";
         String KEY_DATA = "data"; // In the JSON object, data is a key whose value is an array of data from devices
+        String KEY_MESSAGE = "message";
         String details = "";
 
         @Override
@@ -113,12 +114,14 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                     String deviceName = device.getString("Name");
                     String deviceDescription = device.getString("Description");
                     details = deviceName + " " + deviceDescription;
-                    details += "/n";
-
+                }
+                else{
+                    details = jsonObject.getString(KEY_MESSAGE);
                 }
             }
             catch (JSONException e) {
                 e.printStackTrace();
+                details = "There was a connection problem. Please try again";
             }
             // Returns the list
             return details;
