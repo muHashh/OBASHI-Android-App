@@ -1,9 +1,13 @@
 package com.example.scannerapp;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
@@ -12,6 +16,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 
 import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.scannerapp.ui.ar.ArAppViewModel;
 import com.google.ar.core.Anchor;
@@ -36,6 +42,7 @@ import java.util.Collection;
 public class ar extends AppCompatActivity {
     private static final String TAG = ar.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
+    private static final int REQUEST_CODE = 1;
 
     private ModelRenderable MRenderable ;
     private ArFragment arFragment;
@@ -50,10 +57,8 @@ public class ar extends AppCompatActivity {
             return;
         }
 
-        setContentView(R.layout.ar);
-        arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
+        verifyPermissions();
 
-        arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 
     }
 
@@ -93,6 +98,28 @@ public class ar extends AppCompatActivity {
                     anchorNode.setRenderable(cubeRenderable);
                     arFragment.getArSceneView().getScene().addChild(anchorNode);
                 });
+    }
+
+    private void verifyPermissions() {
+        Log.d(TAG, "Verifying permissions: Asking user for camera permission.");
+        String[] permissions = {Manifest.permission.CAMERA};
+
+        if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                permissions[0]) == PackageManager.PERMISSION_GRANTED) {
+
+            setContentView(R.layout.ar);
+            arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
+            arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
+
+        }
+        else {
+            ActivityCompat.requestPermissions(ar.this, permissions, REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        verifyPermissions();
     }
 
     public static boolean checkDevice(final Activity activity) {
