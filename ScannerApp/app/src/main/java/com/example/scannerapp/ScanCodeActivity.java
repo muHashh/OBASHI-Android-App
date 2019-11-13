@@ -119,7 +119,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                     details = jsonObject.getString(KEY_MESSAGE);
                 }
             }
-            catch (JSONException e) {
+            catch (Exception e) {
                 e.printStackTrace();
                 details = "There was a connection problem. Please try again";
             }
