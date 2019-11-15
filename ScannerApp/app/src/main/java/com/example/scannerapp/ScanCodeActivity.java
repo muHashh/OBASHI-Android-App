@@ -91,12 +91,6 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
 
         @Override
         protected String doInBackground(String... params) {
-            // Creates a new HttpJsonParser object
-            // Then executes the method makeHttpRequest, with arguments the URL,
-            // which is the server URL plus the name of the script, "GET", because it is
-            // getting data from the database, not changing it, and null, because this request
-            // doesn't need any parameter. If this wasn't the case, the parameters should be
-            // in a Map<String, String>. Finally, a JSON object containing the response is returned.
             HttpJsonParser httpJsonParser = new HttpJsonParser();
             HashMap<String, String> parameters = new HashMap<>();
             parameters.put("DeviceID", params[0]);

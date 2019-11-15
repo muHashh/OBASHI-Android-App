@@ -23,6 +23,13 @@ public class HttpJsonParser {
     static String json = "";
     HttpURLConnection urlConnection = null;
 
+    /**
+     * This method is used for making requests to the remote server
+     * @param url A String which has the URL of the server, followed by the name of the script to execute
+     * @param method A String which can be either GET, for HTTP GET requests, or POST, for HTTP POST requests
+     * @param params A map of key-value pairs which contains the parameters necessary for the request
+     * @return A JSON object which contains the response, following the format outlined in the Wiki
+     */
     public JSONObject makeHttpRequest(String url, String method, Map<String, String> params){
         try {
             Uri.Builder builder = new Uri.Builder();
