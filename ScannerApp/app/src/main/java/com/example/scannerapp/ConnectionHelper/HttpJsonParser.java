@@ -1,16 +1,12 @@
 package com.example.scannerapp.ConnectionHelper;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Map;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.net.Uri;
@@ -18,10 +14,10 @@ import android.util.Log;
 
 public class HttpJsonParser {
 
-    static InputStream is = null;
-    static JSONObject jObj = null;
-    static String json = "";
-    HttpURLConnection urlConnection = null;
+    private static InputStream is = null;
+    private static JSONObject jObj = null;
+    private static String json = "";
+    private HttpURLConnection urlConnection = null;
 
     /**
      * This method is used for making requests to the remote server
@@ -68,14 +64,6 @@ public class HttpJsonParser {
             is.close();
             json = sb.toString();
             jObj = new JSONObject(json);
-        } catch (UnsupportedEncodingException e){
-            e.printStackTrace();
-        } catch (ProtocolException e){
-            e.printStackTrace();
-        } catch (IOException e){
-            e.printStackTrace();
-        } catch (JSONException e){
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
         } catch (Exception e){
             Log.e("Exception", "Error parsing data " + e.toString());
         }

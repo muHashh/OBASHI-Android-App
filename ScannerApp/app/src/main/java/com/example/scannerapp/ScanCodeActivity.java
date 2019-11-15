@@ -15,7 +15,6 @@ import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
 import com.example.scannerapp.ui.home.HomeFragment;
 import com.google.zxing.Result;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -80,7 +79,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         verifyPermissions();
     }
 
-    private class FetchDeviceAsyncTask extends AsyncTask<String, String, String> {
+    private static class FetchDeviceAsyncTask extends AsyncTask<String, String, String> {
 
         String BASE_URL = "http://10.0.2.2/ObashiDB/"; // The address where the server is. 10.0.2.2 is basically localhost,
         // so for deployment it should be changed for an actual address
