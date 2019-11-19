@@ -24,21 +24,22 @@ before_script:
   - set +o pipefail
   - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
   - set -o pipefail
+  - cd ./ScannerApp
 
 lintDebug:
   stage: build
   script:
-    - ./ScannerApp/gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
+    - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
 
 assembleDebug:
   stage: build
   script:
-    - ./ScannerApp/gradlew assembleDebug
+    - ./gradlew assembleDebug
   artifacts:
     paths:
-      - ./ScannerApp/app/build/outputs/
+      - ./app/build/outputs/
 
 debugTests:
   stage: test
   script:
-    - ./ScannerApp/gradlew -Pci --console=plain :app:testDebug
+    - ./gradlew -Pci --console=plain :app:testDebug
