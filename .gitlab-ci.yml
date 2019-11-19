@@ -24,6 +24,7 @@ before_script:
   - set +o pipefail
   - yes | android-sdk-linux/tools/bin/sdkmanager --licenses
   - set -o pipefail
+  - sudo apt-get install openjdk-8-jdk
   - cd ./ScannerApp
 
 lintDebug:
