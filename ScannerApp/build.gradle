@@ -29,8 +29,3 @@ task clean(type: Delete) {
 }
 
 
-android {
-        lintOptions {
-            abortOnError false
-        }
-    }
