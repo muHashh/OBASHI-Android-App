@@ -17,16 +17,18 @@ public class HttpJsonParser {
     private static InputStream is = null;
     private static JSONObject jObj = null;
     private static String json = "";
+    public static final String BASE_URL = "http://165.22.119.191/ObashiDB/";
     private HttpURLConnection urlConnection = null;
 
     /**
      * This method is used for making requests to the remote server
-     * @param url A String which has the URL of the server, followed by the name of the script to execute
+     * @param script A String which has the name of the script to execute
      * @param method A String which can be either GET, for HTTP GET requests, or POST, for HTTP POST requests
      * @param params A map of key-value pairs which contains the parameters necessary for the request
      * @return A JSON object which contains the response, following the format outlined in the Wiki
      */
-    public JSONObject makeHttpRequest(String url, String method, Map<String, String> params){
+    public JSONObject makeHttpRequest(String script, String method, Map<String, String> params){
+        String url = BASE_URL + script;
         try {
             Uri.Builder builder = new Uri.Builder();
             URL urlObj;

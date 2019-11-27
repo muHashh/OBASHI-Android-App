@@ -81,8 +81,6 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
 
     private static class FetchDeviceAsyncTask extends AsyncTask<String, String, String> {
 
-        String BASE_URL = "http://10.0.2.2/ObashiDB/"; // The address where the server is. 10.0.2.2 is basically localhost,
-        // so for deployment it should be changed for an actual address
         String KEY_SUCCESS = "success";
         String KEY_DATA = "data"; // In the JSON object, data is a key whose value is an array of data from devices
         String KEY_MESSAGE = "message";
@@ -94,7 +92,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
             HashMap<String, String> parameters = new HashMap<>();
             parameters.put("DeviceID", params[0]);
             JSONObject jsonObject = httpJsonParser.makeHttpRequest(
-                    BASE_URL + "fetch_device_details.php", "GET", parameters);
+                    "fetch_device_details.php", "GET", parameters);
             try {
                 // Gets the value of success, which can be either 1 (successful) or 0 (unsuccessful)
                 int success = jsonObject.getInt(KEY_SUCCESS);
