@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Block of code for AR fragment view -->
+
     <fragment android:name="com.google.ar.sceneform.ux.ArFragment"
         android:id="@+id/main_fragment"
         android:layout_width="match_parent"

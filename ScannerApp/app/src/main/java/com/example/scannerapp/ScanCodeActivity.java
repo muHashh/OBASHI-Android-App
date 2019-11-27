@@ -15,7 +15,6 @@ import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
 import com.example.scannerapp.ui.home.HomeFragment;
 import com.google.zxing.Result;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -80,10 +79,8 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         verifyPermissions();
     }
 
-    private class FetchDeviceAsyncTask extends AsyncTask<String, String, String> {
+    private static class FetchDeviceAsyncTask extends AsyncTask<String, String, String> {
 
-        String BASE_URL = "http://10.0.2.2/ObashiDB/"; // The address where the server is. 10.0.2.2 is basically localhost,
-        // so for deployment it should be changed for an actual address
         String KEY_SUCCESS = "success";
         String KEY_DATA = "data"; // In the JSON object, data is a key whose value is an array of data from devices
         String KEY_MESSAGE = "message";
@@ -91,17 +88,11 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
 
         @Override
         protected String doInBackground(String... params) {
-            // Creates a new HttpJsonParser object
-            // Then executes the method makeHttpRequest, with arguments the URL,
-            // which is the server URL plus the name of the script, "GET", because it is
-            // getting data from the database, not changing it, and null, because this request
-            // doesn't need any parameter. If this wasn't the case, the parameters should be
-            // in a Map<String, String>. Finally, a JSON object containing the response is returned.
             HttpJsonParser httpJsonParser = new HttpJsonParser();
             HashMap<String, String> parameters = new HashMap<>();
             parameters.put("DeviceID", params[0]);
             JSONObject jsonObject = httpJsonParser.makeHttpRequest(
-                    BASE_URL + "fetch_device_details.php", "GET", parameters);
+                    "fetch_device_details.php", "GET", parameters);
             try {
                 // Gets the value of success, which can be either 1 (successful) or 0 (unsuccessful)
                 int success = jsonObject.getInt(KEY_SUCCESS);

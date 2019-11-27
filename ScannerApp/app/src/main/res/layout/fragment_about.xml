@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Block of codes for CARDVIEWS -->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -85,6 +86,7 @@
             android:text="Developers: \n\nHassan Shahid\nShourya Verma\nSteg Considine\nNico Sperry\nJosé Rodríguez" />
 </androidx.cardview.widget.CardView>
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view4"
         android:layout_width="match_parent"
@@ -122,7 +124,7 @@
             android:textAlignment="center"
             android:textColor="@color/whiteColor"
             android:textSize="17dp"
-            android:text="Technologies: \n\nGoogle AR Core\nMySQL Database\nZXing Library" />
+            android:text="Technologies: \n\nGoogle AR Core\nWAMP Server\nZXing Library API" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

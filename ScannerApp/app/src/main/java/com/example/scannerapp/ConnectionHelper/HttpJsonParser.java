@@ -1,16 +1,12 @@
 package com.example.scannerapp.ConnectionHelper;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.Map;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.net.Uri;
@@ -18,12 +14,21 @@ import android.util.Log;
 
 public class HttpJsonParser {
 
-    static InputStream is = null;
-    static JSONObject jObj = null;
-    static String json = "";
-    HttpURLConnection urlConnection = null;
+    private static InputStream is = null;
+    private static JSONObject jObj = null;
+    private static String json = "";
+    public static final String BASE_URL = "http://165.22.119.191/ObashiDB/";
+    private HttpURLConnection urlConnection = null;
 
-    public JSONObject makeHttpRequest(String url, String method, Map<String, String> params){
+    /**
+     * This method is used for making requests to the remote server
+     * @param script A String which has the name of the script to execute
+     * @param method A String which can be either GET, for HTTP GET requests, or POST, for HTTP POST requests
+     * @param params A map of key-value pairs which contains the parameters necessary for the request
+     * @return A JSON object which contains the response, following the format outlined in the Wiki
+     */
+    public JSONObject makeHttpRequest(String script, String method, Map<String, String> params){
+        String url = BASE_URL + script;
         try {
             Uri.Builder builder = new Uri.Builder();
             URL urlObj;
@@ -61,14 +66,6 @@ public class HttpJsonParser {
             is.close();
             json = sb.toString();
             jObj = new JSONObject(json);
-        } catch (UnsupportedEncodingException e){
-            e.printStackTrace();
-        } catch (ProtocolException e){
-            e.printStackTrace();
-        } catch (IOException e){
-            e.printStackTrace();
-        } catch (JSONException e){
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
         } catch (Exception e){
             Log.e("Exception", "Error parsing data " + e.toString());
         }
