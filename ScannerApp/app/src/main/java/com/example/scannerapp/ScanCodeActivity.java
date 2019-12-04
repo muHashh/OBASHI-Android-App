@@ -81,9 +81,6 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
 
     private static class FetchDeviceAsyncTask extends AsyncTask<String, String, String> {
 
-        String KEY_SUCCESS = "success";
-        String KEY_DATA = "data"; // In the JSON object, data is a key whose value is an array of data from devices
-        String KEY_MESSAGE = "message";
         String details = "";
 
         @Override
@@ -95,23 +92,22 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
                     "fetch_device_details.php", "GET", parameters);
             try {
                 // Gets the value of success, which can be either 1 (successful) or 0 (unsuccessful)
-                int success = jsonObject.getInt(KEY_SUCCESS);
+                int success = jsonObject.getInt(httpJsonParser.getKeySuccess());
                 JSONObject device;
                 // If the retrieval was successful
                 if (success == 1) {
                     // Gets the details of the device
-                    device = jsonObject.getJSONObject(KEY_DATA);
+                    device = jsonObject.getJSONObject(httpJsonParser.getKeyData());
                     // For each device gets its name and adds it to the String devicesLis
                     String deviceName = device.getString("Name");
                     String deviceDescription = device.getString("Description");
                     details = deviceName + " " + deviceDescription;
                 }
                 else{
-                    details = jsonObject.getString(KEY_MESSAGE);
+                    details = jsonObject.getString(httpJsonParser.getKeyMessage());
                 }
             }
             catch (Exception e) {
-                e.printStackTrace();
                 details = "There was a connection problem. Please try again";
             }
             // Returns the list

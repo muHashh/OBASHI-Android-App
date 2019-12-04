@@ -8,26 +8,21 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.scannerapp.ui.ar.ArAppViewModel;
 import com.google.ar.core.Anchor;
-import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
 import com.google.ar.core.Frame;
 
 import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.ArSceneView;
 import com.google.ar.sceneform.FrameTime;
 import com.google.ar.sceneform.rendering.ShapeFactory;
 import com.google.ar.sceneform.math.Vector3;
@@ -35,12 +30,11 @@ import com.google.ar.sceneform.rendering.Color;
 import com.google.ar.sceneform.rendering.MaterialFactory;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
-import com.google.ar.sceneform.ux.TransformableNode;
 
 import java.util.Collection;
 
-public class ar extends AppCompatActivity {
-    private static final String TAG = ar.class.getSimpleName();
+public class Ar extends AppCompatActivity {
+    private static final String TAG = Ar.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
     private static final int REQUEST_CODE = 1;
 
@@ -77,6 +71,7 @@ public class ar extends AppCompatActivity {
                 Anchor anchor = plane.createAnchor(plane.getCenterPose());
 
                 makeCube(anchor);
+                makePipe(anchor);
 
                 break;
             }
@@ -100,6 +95,22 @@ public class ar extends AppCompatActivity {
                 });
     }
 
+    private void makePipe(Anchor anchor) {
+
+        isModelPlaced = true;
+
+        MaterialFactory
+                .makeTransparentWithColor(this, new Color(new Color(1, 1, 1, (float)0.5)))
+                .thenAccept(material -> {
+
+                    ModelRenderable pipeRenderable = ShapeFactory.makeCylinder((float)0.2, (float)1, new Vector3(0.0f, 1.0f, 0.0f),  material);
+
+                    AnchorNode anchorNode = new AnchorNode(anchor);
+                    anchorNode.setRenderable(pipeRenderable);
+                    arFragment.getArSceneView().getScene().addChild(anchorNode);
+                });
+    }
+
     private void verifyPermissions() {
         Log.d(TAG, "Verifying permissions: Asking user for camera permission.");
         String[] permissions = {Manifest.permission.CAMERA};
@@ -113,7 +124,7 @@ public class ar extends AppCompatActivity {
 
         }
         else {
-            ActivityCompat.requestPermissions(ar.this, permissions, REQUEST_CODE);
+            ActivityCompat.requestPermissions(Ar.this, permissions, REQUEST_CODE);
         }
     }
 

@@ -17,7 +17,10 @@ public class HttpJsonParser {
     private static InputStream is = null;
     private static JSONObject jObj = null;
     private static String json = "";
-    public static final String BASE_URL = "http://165.22.119.191/ObashiDB/";
+    private static final String KEY_SUCCESS = "success";
+    private static final String KEY_DATA = "data";
+    private static final String KEY_MESSAGE = "message";
+    private static final String BASE_URL = "http://165.22.119.191/ObashiDB/";
     private HttpURLConnection urlConnection = null;
 
     /**
@@ -71,4 +74,31 @@ public class HttpJsonParser {
         }
         return jObj;
     }
+
+    /**
+     *
+     * @return The key whose value is data retrieved by the request
+     */
+    public String getKeyData(){
+        return KEY_DATA;
+    }
+
+    /**
+     *
+     * @return The key whose value is a message that tells whether everything went fine in a POST
+     * request or if something went wrong, both in a POST and a GET request
+     */
+    public String getKeyMessage(){
+        return KEY_MESSAGE;
+    }
+
+    /**
+     *
+     * @return The key whose value in the JSON response is either 1, for successful connections,
+     * or 0, for unsuccessful ones.
+     */
+    public String getKeySuccess(){
+        return KEY_SUCCESS;
+    }
+
 }

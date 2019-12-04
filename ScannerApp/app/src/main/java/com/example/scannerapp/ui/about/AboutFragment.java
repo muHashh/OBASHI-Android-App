@@ -11,8 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.scannerapp.R;
+
+import me.dm7.barcodescanner.core.ViewFinderView;
 
 public class AboutFragment extends Fragment {
 
@@ -27,4 +30,6 @@ public class AboutFragment extends Fragment {
 
         return root;
     }
+
+
 }
