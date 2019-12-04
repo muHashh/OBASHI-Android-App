@@ -71,6 +71,7 @@ public class Ar extends AppCompatActivity {
                 Anchor anchor = plane.createAnchor(plane.getCenterPose());
 
                 makeCube(anchor);
+                makePipe(anchor);
 
                 break;
             }
@@ -90,6 +91,22 @@ public class Ar extends AppCompatActivity {
 
                     AnchorNode anchorNode = new AnchorNode(anchor);
                     anchorNode.setRenderable(cubeRenderable);
+                    arFragment.getArSceneView().getScene().addChild(anchorNode);
+                });
+    }
+
+    private void makePipe(Anchor anchor) {
+
+        isModelPlaced = true;
+
+        MaterialFactory
+                .makeTransparentWithColor(this, new Color(new Color(1, 1, 1, (float)0.5)))
+                .thenAccept(material -> {
+
+                    ModelRenderable pipeRenderable = ShapeFactory.makeCylinder((float)1, (float)4, new Vector3(0f, 0.1f, 0f), material);
+
+                    AnchorNode anchorNode = new AnchorNode(anchor);
+                    anchorNode.setRenderable(pipeRenderable);
                     arFragment.getArSceneView().getScene().addChild(anchorNode);
                 });
     }
