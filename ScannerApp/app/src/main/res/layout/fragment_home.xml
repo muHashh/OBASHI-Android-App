@@ -7,6 +7,10 @@
 
     <!-- Block of codes for FLOATING BUTTON -->
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,15 +20,14 @@
         android:layout_marginEnd="10sp"
         tools:ignore='ScrollViewSize'>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:ignore="UselessParent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_view_home"
+                android:id="@+id/card_view_home1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -33,25 +36,55 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardBackgroundColor="@color/blackgreyColor"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
                 <TextView
-                    android:id="@+id/result_text"
+                    android:id="@+id/heading_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="Result"
+                    android:text="SCANNED MACHINES"
+                    android:textStyle="bold"
                     android:textAlignment="center"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="20sp"></TextView>
+                    android:textColor="#ffb101"
+                    android:textSize="25sp"></TextView>
 
             </androidx.cardview.widget.CardView>
 
-        </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view_home2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/result_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Result"
+                        android:textAlignment="center"
+                        android:textColor="@color/whiteColor"
+                        android:textSize="20sp"></TextView>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
     </RelativeLayout>
+    </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
