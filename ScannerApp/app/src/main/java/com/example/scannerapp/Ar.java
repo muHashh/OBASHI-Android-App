@@ -103,7 +103,7 @@ public class Ar extends AppCompatActivity {
                 .makeTransparentWithColor(this, new Color(new Color(1, 1, 1, (float)0.5)))
                 .thenAccept(material -> {
 
-                    ModelRenderable pipeRenderable = ShapeFactory.makeCylinder((float)1, (float)4, new Vector3(0f, 0.1f, 0f), material);
+                    ModelRenderable pipeRenderable = ShapeFactory.makeCylinder((float)0.2, (float)1, new Vector3(0.0f, 1.0f, 0.0f),  material);
 
                     AnchorNode anchorNode = new AnchorNode(anchor);
                     anchorNode.setRenderable(pipeRenderable);
