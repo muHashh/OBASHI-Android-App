@@ -51,4 +51,41 @@ foreach($devices as $device){
 	//Reset $stmt. Don't know why, but it needs this to work properly
 	$stmt = '';
 }
+
+//Add each data item in $data
+foreach($data as $d){
+	$query = "SELECT * FROM Data Where Name = ?";
+	$stmt = $con->prepare($query);
+	//Bind parameters
+	$stmt->bind_param("s",$d);
+	//Executing MySQL statement
+	$stmt->execute();
+	//If no data item found, insert data item
+	if(!$stmt->fetch()){
+		//Query to insert a data item
+		$query = "INSERT INTO Data(name) VALUES (?)";
+		$stmt = $con->prepare($query);
+		//Bind parameters
+		$stmt->bind_param("s",$d);
+		//Executing MySQL statement
+		$stmt->execute();
+		if($stmt->affected_rows == 1){
+			echo "Data with name ";
+			echo $d;
+			echo " successfully added\n";
+		}
+		else{
+			echo "Failure to add data with name ";
+			echo $d;
+			echo "\n";
+		}
+	}
+	else{
+		echo "Data with name ";
+		echo $d;
+		echo " already on database\n";
+	}
+	//Reset $stmt. Don't know why, but it needs this to work properly
+	$stmt = '';
+}
 ?>
