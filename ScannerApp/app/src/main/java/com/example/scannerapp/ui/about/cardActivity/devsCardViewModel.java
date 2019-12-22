@@ -1,15 +1,14 @@
-package com.example.scannerapp.ui.about;
+package com.example.scannerapp.ui.about.cardActivity;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import android.view.View;
 
-public class AboutViewModel extends ViewModel {
+public class devsCardViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public AboutViewModel() {
+    public devsCardViewModel() {
         mText = new MutableLiveData<>();
     }
 
