@@ -1,5 +1,6 @@
 package com.example.scannerapp;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.view.View;
@@ -10,6 +11,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import androidx.test.rule.ActivityTestRule;
+import androidx.test.rule.GrantPermissionRule;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -25,6 +27,8 @@ public class MainActivityTest {
     //Create new activity instance
     @Rule
     public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<MainActivity>(MainActivity.class);
+    @Rule
+    public GrantPermissionRule mRuntimePermissionRule = GrantPermissionRule.grant(Manifest.permission.CAMERA);
 
     private MainActivity mainActivity = null;
 
