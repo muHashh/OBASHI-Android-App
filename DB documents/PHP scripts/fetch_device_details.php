@@ -3,22 +3,22 @@ include 'db/db_connect.php';
 $deviceArray = array();
 $response = array();
  
-//Check for mandatory parameter DeviceID
+// Check for mandatory parameter DeviceID
 if(isset($_GET['DeviceID'])){
 	$DeviceID = $_GET['DeviceID'];
-	//Query to fetch the details of a device
+	// Query to fetch the details of a device
 	$query = "SELECT * FROM Devices WHERE DeviceID=?";
-	//Prepare the query
+	// Prepare the query
 	if($stmt = $con->prepare($query)){
-		//Bind parameters
+		// Bind parameters
 		$stmt->bind_param("i",$DeviceID);
-		//Exceting MySQL statement
+		// Executing MySQL statement
 		$stmt->execute();
-		//Bind the fetched data to all of the attributes
+		// Bind the fetched data to all of the attributes
 		$stmt->bind_result($DeviceID, $Name, $Description, $X_coord, $Y_coord, $Z_coord);
-		//Check if data got updated
+		// Check if data got updated
 		if($stmt->fetch()){
-			//Populate the device array
+			// Populate the device array
 			$deviceArray["DeviceID"] = $DeviceID;
 			$deviceArray["Name"] = $Name;
 			$deviceArray["Description"] = $Description;
@@ -29,21 +29,21 @@ if(isset($_GET['DeviceID'])){
 			$response["data"]=$deviceArray;
 			
 		}else{
-			//When the device is not found
+			// When the device is not found
 			$response["success"] = 0;
 			$response["message"] = "Device not found";
 		}					
 	}else{
-		//Some error while updating
+		// Some error while updating
 		$response["success"] = 0;
 		$response["message"] = mysqli_error($con);
 	}
  
 }else{
-	//Mandatory parameters are missing
+	// Mandatory parameters are missing
 	$response["success"] = 0;
 	$response["message"] = "Missing parameter DeviceID";
 }
-//Displaying JSON response
+// Displaying JSON response
 echo json_encode($response);
 ?>
