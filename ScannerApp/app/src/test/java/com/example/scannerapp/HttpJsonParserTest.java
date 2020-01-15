@@ -1,11 +1,13 @@
 package com.example.scannerapp;
 
 import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
-
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
+
+/**
+ * This file tests the file HttpJsonParser.java, in the package ConnectionHelper
+ */
 public class HttpJsonParserTest {
 
     @Test
