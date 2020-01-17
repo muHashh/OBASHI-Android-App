@@ -40,6 +40,21 @@ assembleDebug:
     paths:
       - ./app/build/outputs/
 
+#Instrumentation testing for UI
+instrumentationTests:
+    stage: test
+    image: shepeliev/android-sdk
+    script:
+        - /opt/start-default-emulator.sh
+        # Turn off animation
+        - adb shell settings put global window_animation_scale 0
+        - adb shell settings put global transition_animation_scale 0
+        - adb shell settings put global animator_duration_scale 0
+        # Turn off google auto-fill
+        - adb shell settings put secure autofill_service null
+        - ./gradlew cAT
+        
+
 debugTests:
   stage: test
   script:
