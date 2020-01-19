@@ -9,15 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+
+import com.example.scannerapp.CardOpen;
 import com.example.scannerapp.R;
-import com.example.scannerapp.ui.about.cardActivity.appCard;
-import com.example.scannerapp.ui.about.cardActivity.devsCard;
-import com.example.scannerapp.ui.about.cardActivity.techCard;
 
 public class AboutFragment extends Fragment{
 
     private AboutViewModel aboutViewModel;
-    private CardView app,devs,tech;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -26,30 +24,18 @@ public class AboutFragment extends Fragment{
         aboutViewModel = ViewModelProviders.of(this).get(AboutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_about, container, false);
 
-        devs = root.findViewById(R.id.card_view3);
-        app = root.findViewById(R.id.card_view1);
-        tech = root.findViewById(R.id.card_view4);
 
-        devs.setOnClickListener(new View.OnClickListener() {
+        CardView card = root.findViewById(R.id.card_view3);
+        card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), devsCard.class));
-            }
-        });
-        app.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getContext(), appCard.class));
-            }
-        });
-        tech.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getContext(), techCard.class));
+                Intent intent = new Intent(getActivity(), CardOpen.class);
+                startActivity(intent);
+
             }
         });
 
         return root;
 
-        }
     }
+}
