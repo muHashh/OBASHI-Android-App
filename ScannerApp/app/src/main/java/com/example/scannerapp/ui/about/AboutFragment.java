@@ -25,11 +25,34 @@ public class AboutFragment extends Fragment{
         View root = inflater.inflate(R.layout.fragment_about, container, false);
 
 
-        CardView card = root.findViewById(R.id.card_view3);
-        card.setOnClickListener(new View.OnClickListener() {
+        CardView card3 = root.findViewById(R.id.card_view3);
+        card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), CardOpen.class);
+                intent.putExtra("LAYOUT_NAME", R.layout.card_devs);
+                startActivity(intent);
+
+            }
+        });
+
+        CardView card4 = root.findViewById(R.id.card_view4);
+        card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CardOpen.class);
+                intent.putExtra("LAYOUT_NAME", R.layout.card_tech);
+                startActivity(intent);
+
+            }
+        });
+
+        CardView card1 = root.findViewById(R.id.card_view1);
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CardOpen.class);
+                intent.putExtra("LAYOUT_NAME", R.layout.card_app);
                 startActivity(intent);
 
             }
