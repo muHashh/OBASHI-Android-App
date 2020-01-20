@@ -35,7 +35,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
@@ -44,7 +44,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     def drawerlayout = "1.0.0"
     implementation "androidx.drawerlayout:drawerlayout:$drawerlayout"
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
@@ -59,8 +59,9 @@ dependencies {
 
     //Sceneform UX provides UX resources, including ArFragment//
 
-    implementation 'com.google.ar.sceneform:core:1.13.0'
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.13.0'
+    implementation 'com.google.ar.sceneform:core:1.14.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.14.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
 
 }
 

@@ -32,6 +32,8 @@ import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 
 import java.util.Collection;
+import android.location.LocationManager;
+import android.location.Location;
 
 public class Ar extends AppCompatActivity {
     private static final String TAG = Ar.class.getSimpleName();
@@ -119,6 +121,12 @@ public class Ar extends AppCompatActivity {
                 permissions[0]) == PackageManager.PERMISSION_GRANTED) {
 
             setContentView(R.layout.ar);
+            LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+            Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            double longitude = location.getLongitude();
+            double latitude = location.getLatitude();
+
+
             arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
             arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 
