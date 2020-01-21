@@ -118,9 +118,8 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
 
         // This method takes the value returned by the previous one and then uses it, in this case to set
         // the text of resultTextView to be the list of names of all the devices
-        protected void onPostExecute(String result) {
+        public void onPostExecute(String result) {
             HomeFragment.resultTextView.setText(result);
         }
-
     }
 }

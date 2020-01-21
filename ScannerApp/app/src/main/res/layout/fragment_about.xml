@@ -53,7 +53,7 @@
                     android:textSize="30dp"
                     android:textStyle="bold"
                     android:textColor="#ffb101"
-                    android:text="OBASHI Data Flow App" />
+                    android:text="OBASHI Data Flow" />
 
             </androidx.cardview.widget.CardView>
 
@@ -87,7 +87,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
                     android:textSize="17dp"
-                    android:text="Developers: \n\nHassan Shahid\nShourya Verma\nSteg Considine\nNico Sperry\nJosé Rodríguez" />
+                    android:text="Developers: \n\nHassan Shahid\nShourya Verma\nStephen Considine\nNico Sperry\nJosé Rodríguez" />
             </androidx.cardview.widget.CardView>
 
 
