@@ -13,7 +13,7 @@ public class CardOpen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent i = getIntent();
 
-        setContentView(i.getIntExtra("LAYOUT_NAME",0));
+        setContentView(i.getIntExtra("LAYOUT_NAME",1));
 
     }
 

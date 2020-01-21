@@ -24,6 +24,16 @@ public class AboutFragment extends Fragment{
         aboutViewModel = ViewModelProviders.of(this).get(AboutViewModel.class);
         View root = inflater.inflate(R.layout.fragment_about, container, false);
 
+        CardView card1 = root.findViewById(R.id.card_view1);
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CardOpen.class);
+                intent.putExtra("LAYOUT_NAME", R.layout.card_app);
+                startActivity(intent);
+
+            }
+        });
 
         CardView card3 = root.findViewById(R.id.card_view3);
         card3.setOnClickListener(new View.OnClickListener() {
@@ -42,17 +52,6 @@ public class AboutFragment extends Fragment{
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), CardOpen.class);
                 intent.putExtra("LAYOUT_NAME", R.layout.card_tech);
-                startActivity(intent);
-
-            }
-        });
-
-        CardView card1 = root.findViewById(R.id.card_view1);
-        card1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CardOpen.class);
-                intent.putExtra("LAYOUT_NAME", R.layout.card_app);
                 startActivity(intent);
 
             }

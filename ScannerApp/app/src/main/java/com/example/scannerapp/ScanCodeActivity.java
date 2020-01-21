@@ -42,6 +42,8 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         FetchDeviceAsyncTask connectMySql = new FetchDeviceAsyncTask();
         connectMySql.execute(result.getText());
         onBackPressed();
+
+
     }
 
     @Override
