@@ -41,24 +41,24 @@ assembleDebug:
       - ./app/build/outputs/
 
 #Instrumentation testing for UI
-instrumentationTests:
-    stage: test
+#instrumentationTests:
+    #stage: test
     #image: shepeliev/android-sdk
-    script:
-        - sudo apt-get -y --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder >/dev/null
-        - wget --quiet --output-document=android-wait-for-emulator https://raw.githubusercontent.com/travis-ci/travis-cookbooks/0f497eb71291b52a703143c5cd63a217c8766dc9/community-cookbooks/android-sdk/files/default/android-wait-for-emulator
-        - sudo chmod +x android-wait-for-emulator
-        - echo y | ${ANDROID_HOME}/tools/bin/sdkmanager "system-images;android-${ANDROID_COMPILE_SDK};google_apis_playstore;x86"
-        - echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
-        - echo no | ${ANDROID_HOME}/tools/bin/avdmanager create avd --force -k "system-images;android-${ANDROID_COMPILE_SDK};google_apis_playstore;x86" -n test
-        - ${ANDROID_HOME}/emulator/emulator -avd test -no-boot-anim -no-snapshot-save -no-window -no-audio -no-accel -gpu off -debug -all
-        - ./android-wait-for-emulator
-        - adb devices
-        - adb shell settings put global window_animation_scale 0 &
-        - adb shell settings put global transition_animation_scale 0 &
-        - adb shell settings put global animator_duration_scale 0 &
-        - adb shell input keyevent 82 &
-        - ./gradlew cAT
+    #script:
+        #- sudo apt-get -y --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder >/dev/null
+        #- wget --quiet --output-document=android-wait-for-emulator https://raw.githubusercontent.com/travis-ci/travis-cookbooks/0f497eb71291b52a703143c5cd63a217c8766dc9/community-cookbooks/android-sdk/files/default/android-wait-for-emulator
+        #- sudo chmod +x android-wait-for-emulator
+        #- echo y | ${ANDROID_HOME}/tools/bin/sdkmanager "system-images;android-${ANDROID_COMPILE_SDK};google_apis_playstore;x86"
+        #- echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
+        #- echo no | ${ANDROID_HOME}/tools/bin/avdmanager create avd --force -k "system-images;android-${ANDROID_COMPILE_SDK};google_apis_playstore;x86" -n test
+        #- ${ANDROID_HOME}/emulator/emulator -avd test -no-boot-anim -no-snapshot-save -no-window -no-audio -no-accel -gpu off -debug -all
+        #- ./android-wait-for-emulator
+        #- adb devices
+        #- adb shell settings put global window_animation_scale 0 &
+        #- adb shell settings put global transition_animation_scale 0 &
+        #- adb shell settings put global animator_duration_scale 0 &
+        #- adb shell input keyevent 82 &
+        #- ./gradlew cAT
         
 
 debugTests:
