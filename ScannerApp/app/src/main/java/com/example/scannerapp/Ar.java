@@ -38,7 +38,7 @@ public class Ar extends AppCompatActivity {
     private static final double MIN_OPENGL_VERSION = 3.0;
     private static final int REQUEST_CODE = 1;
 
-    private ModelRenderable MRenderable ;
+    private ModelRenderable MRenderable;
     private ArFragment arFragment;
     private boolean isModelPlaced;
 
@@ -70,15 +70,19 @@ public class Ar extends AppCompatActivity {
             if (plane.getTrackingState() == TrackingState.TRACKING) {
                 Anchor anchor = plane.createAnchor(plane.getCenterPose());
 
-                makeCube(anchor);
-                makePipe(anchor);
+                makeCube(anchor, new Vector3(0f, 0.1f, 0f));
+                makePipe(anchor, new Vector3(0.0f, 0.7f, 0.0f));
+                makeCube(anchor, new Vector3(0f, 1.2f, 0f));
+                makePipe(anchor, new Vector3(0.0f, -0.5f, 0.0f));
+                makeCube(anchor, new Vector3(0f, -1f, 0f));
+
 
                 break;
             }
         }
     }
 
-    private void makeCube(Anchor anchor) {
+    private void makeCube(Anchor anchor, Vector3 pos) {
 
         isModelPlaced = true;
 
@@ -87,7 +91,7 @@ public class Ar extends AppCompatActivity {
                 .thenAccept(material -> {
 
                     ModelRenderable cubeRenderable = ShapeFactory.makeCube(new Vector3(0.2f, 0.2f, 0.2f),
-                            new Vector3(0f, 0.1f, 0f), material);
+                            pos, material);
 
                     AnchorNode anchorNode = new AnchorNode(anchor);
                     anchorNode.setRenderable(cubeRenderable);
@@ -95,7 +99,7 @@ public class Ar extends AppCompatActivity {
                 });
     }
 
-    private void makePipe(Anchor anchor) {
+    private void makePipe(Anchor anchor, Vector3 pos) {
 
         isModelPlaced = true;
 
@@ -103,7 +107,7 @@ public class Ar extends AppCompatActivity {
                 .makeTransparentWithColor(this, new Color(new Color(1, 1, 1, (float)0.5)))
                 .thenAccept(material -> {
 
-                    ModelRenderable pipeRenderable = ShapeFactory.makeCylinder((float)0.2, (float)1, new Vector3(0.0f, 1.0f, 0.0f),  material);
+                    ModelRenderable pipeRenderable = ShapeFactory.makeCylinder((float)0.01, (float)1, pos,  material);
 
                     AnchorNode anchorNode = new AnchorNode(anchor);
                     anchorNode.setRenderable(pipeRenderable);
@@ -119,6 +123,7 @@ public class Ar extends AppCompatActivity {
                 permissions[0]) == PackageManager.PERMISSION_GRANTED) {
 
             setContentView(R.layout.ar);
+
             arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment);
             arFragment.getArSceneView().getScene().addOnUpdateListener(this::onUpdate);
 

@@ -23,10 +23,8 @@
 
             <!-- Block of codes for CARDVIEWS -->
 
-
-
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_view"
+                android:id="@+id/card_view1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -48,14 +46,14 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/info_text"
+                    android:id="@+id/info_text1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textSize="30dp"
                     android:textStyle="bold"
                     android:textColor="#ffb101"
-                    android:text="OBASHI Data Flow App" />
+                    android:text="OBASHI Data Flow" />
 
             </androidx.cardview.widget.CardView>
 
@@ -89,7 +87,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
                     android:textSize="17dp"
-                    android:text="Developers: \n\nHassan Shahid\nShourya Verma\nSteg Considine\nNico Sperry\nJosé Rodríguez" />
+                    android:text="Developers: \n\nHassan Shahid\nShourya Verma\nStephen Considine\nNico Sperry\nJosé Rodríguez" />
             </androidx.cardview.widget.CardView>
 
 
@@ -124,7 +122,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
                     android:textSize="17dp"
-                    android:text="Technologies: \n\nGoogle AR Core\nWAMP Server\nZXing Library API" />
+                    android:text="Technologies: \n\nGoogle AR Core\nLAMP Server\nZXing Library API\nUnity\nSLAM" />
             </androidx.cardview.widget.CardView>
 
 

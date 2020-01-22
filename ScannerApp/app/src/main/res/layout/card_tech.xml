@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginEnd="10sp"
+        tools:ignore='ScrollViewSize'>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            tools:ignore="UselessParent">
+
+            <!-- Block of codes for CARDVIEWS -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_tech1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardBackgroundColor="@color/blackgreyColor"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/info_text_settings1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffb101"
+                    android:text="Technology Used" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_tech2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/info_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:textAlignment="gravity"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="17dp"
+                    android:text="ARCore is a software development kit
+developed by Google that allows for augmented reality applications to be built.
+                    \n\nLAMP is an archetypal model of web service stacks, named as an acronym of the names
+of its original four open-source components: the Linux operating system,
+the Apache HTTP Server, the MySQL relational database management system, and the PHP programming language.
+                    \n\nZXing Library API (“zebra crossing”) is a barcode image processing library implemented in Java,
+with ports to other languages. It has support for 1D product, 1D industrial, and 2D barcodes.
+                    \n\nSLAM: In navigation, robotic mapping and odometry for virtual reality or augmented reality,
+simultaneous localization and mapping is the computational problem of constructing or updating a map of an unknown
+environment while simultaneously keeping track of an agent's location within it
+                    \n\nUnity is a cross-platform game engine developed by Unity Technologies, first announced and released
+in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine." />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
