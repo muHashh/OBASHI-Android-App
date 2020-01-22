@@ -13,6 +13,8 @@ import android.util.Log;
 
 import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
 import com.example.scannerapp.ui.home.HomeFragment;
+import com.example.scannerapp.ResultActivity;
+
 import com.google.zxing.Result;
 
 import org.json.JSONObject;
@@ -120,6 +122,8 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         // the text of resultTextView to be the list of names of all the devices
         public void onPostExecute(String result) {
             HomeFragment.resultTextView.setText(result);
+            ResultActivity.nameTextView.setText(result);
+
         }
     }
 }

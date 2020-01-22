@@ -22,6 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class HomeFragment extends Fragment {
 
     public  static TextView resultTextView;
+
     private HomeViewModel homeViewModel;
 
     @Override
