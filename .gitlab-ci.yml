@@ -51,7 +51,7 @@ instrumentationTests:
         - echo y | ${ANDROID_HOME}/tools/bin/sdkmanager "system-images;android-${ANDROID_COMPILE_SDK};google_apis_playstore;x86"
         - echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
         - echo no | ${ANDROID_HOME}/tools/bin/avdmanager create avd --force -k "system-images;android-${ANDROID_COMPILE_SDK};google_apis_playstore;x86" -n test
-        - android-sdk-linux/emulator/emulator -avd test -no-boot-anim -no-snapshot-save -no-window -no-audio -no-accel -gpu off -debug -all
+        - ${ANDROID_HOME}/emulator/emulator -avd test -no-boot-anim -no-snapshot-save -no-window -no-audio -no-accel -gpu off -debug -all
         - ./android-wait-for-emulator
         - adb devices
         - adb shell settings put global window_animation_scale 0 &
