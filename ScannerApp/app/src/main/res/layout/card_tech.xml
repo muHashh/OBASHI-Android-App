@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginBottom="10dp"
             tools:ignore="UselessParent">
 
             <!-- Block of codes for CARDVIEWS -->
@@ -97,10 +98,16 @@
                     android:textSize="17dp"
                     android:text="ARCore is a software development kit
 developed by Google that allows for augmented reality applications to be built.
-                    \n\nWamp Server is a Windows web development environment. It allows you to create web applications with Apache2,
-PHP and a MySQL database. Alongside, PhpMyAdmin allows you to manage easily your database.
+                    \n\nLAMP is an archetypal model of web service stacks, named as an acronym of the names
+of its original four open-source components: the Linux operating system,
+the Apache HTTP Server, the MySQL relational database management system, and the PHP programming language.
                     \n\nZXing Library API (“zebra crossing”) is a barcode image processing library implemented in Java,
-with ports to other languages. It has support for 1D product, 1D industrial, and 2D barcodes." />
+with ports to other languages. It has support for 1D product, 1D industrial, and 2D barcodes.
+                    \n\nSLAM: In navigation, robotic mapping and odometry for virtual reality or augmented reality,
+simultaneous localization and mapping is the computational problem of constructing or updating a map of an unknown
+environment while simultaneously keeping track of an agent's location within it
+                    \n\nUnity is a cross-platform game engine developed by Unity Technologies, first announced and released
+in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine." />
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
