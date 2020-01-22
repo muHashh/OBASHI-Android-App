@@ -3,7 +3,6 @@ package com.example.scannerapp;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,15 +22,6 @@ public class ResultActivity extends AppCompatActivity {
     public static TextView info_text;
     private String result;
 
-    public void setResult(String param){
-        Log.e("Exception", "Parameter is " + param);
-        result = param;
-    }
-
-    public String getResult(){
-        return result;
-    }
-
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -40,7 +30,7 @@ public class ResultActivity extends AppCompatActivity {
         FetchDeviceAsyncTask connectMySql = new FetchDeviceAsyncTask();
         connectMySql.execute(result);
         nameTextView = findViewById(R.id.machine_name_view);
-        info_text = findViewById(R.id.info_text11);
+        info_text = findViewById(R.id.info_text1);
 
 
 
