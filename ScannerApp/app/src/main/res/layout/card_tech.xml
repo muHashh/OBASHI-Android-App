@@ -58,7 +58,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_tech2"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -89,6 +89,10 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingLeft="8dp"
                     android:textColor="@color/whiteColor"
                     android:textSize="17dp"
                     android:text="ARCore is a software development kit

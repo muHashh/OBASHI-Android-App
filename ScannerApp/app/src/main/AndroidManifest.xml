@@ -23,6 +23,7 @@
         <activity android:name=".ScanCodeActivity"></activity>
         <activity android:name=".Ar"></activity>
         <activity android:name=".CardOpen"></activity>
+        <activity android:name=".ResultActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

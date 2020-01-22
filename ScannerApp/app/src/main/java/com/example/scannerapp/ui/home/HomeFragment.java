@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.scannerapp.CardOpen;
 import com.example.scannerapp.R;
+import com.example.scannerapp.ResultActivity;
 import com.example.scannerapp.ScanCodeActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -43,8 +44,7 @@ public class HomeFragment extends Fragment {
         card5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CardOpen.class);
-                intent.putExtra("LAYOUT_NAME", R.layout.card_results_home);
+                Intent intent = new Intent(getActivity(), ResultActivity.class);
                 startActivity(intent);
 
             }
