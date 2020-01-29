@@ -52,6 +52,12 @@ public class HomeFragment extends Fragment {
 
         devices.add(new Device("laptop2", 501));
         devices.add(new Device("laptop3", 502));
+        devices.add(new Device("laptop2", 501));
+        devices.add(new Device("laptop3", 502));
+        devices.add(new Device("laptop2", 501));
+        devices.add(new Device("laptop3", 502));
+        devices.add(new Device("laptop2", 501));
+        devices.add(new Device("laptop3", 502));
 
         Intent intent = new Intent(getContext(), ScanCodeActivity.class);
         intent.putExtra("devices", devices);
