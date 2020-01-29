@@ -22,7 +22,7 @@
             android:layout_marginBottom="10sp"
             tools:ignore="UselessParent">
 
-            <!-- Block of codes for CARDVIEWS -->
+            <!-- Block of codes for DEV HEADING -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs1"
@@ -56,6 +56,9 @@
                     android:text="Meet The Developers" />
             </androidx.cardview.widget.CardView>
 
+
+            <!-- Block of codes for DEV INFO -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs2"
                 android:layout_width="match_parent"
@@ -88,7 +91,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@mipmap/hassan" />
 
                 <TextView
                     android:id="@+id/info_text2"
@@ -150,7 +153,7 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:paddingRight="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@mipmap/pepe" />
 
                 <TextView
                     android:id="@+id/info_text3"
@@ -211,7 +214,7 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:paddingRight="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@mipmap/" />
 
                 <TextView
                     android:id="@+id/info_text4"
@@ -272,7 +275,7 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:paddingRight="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@mipmap/steg" />
 
                 <TextView
                     android:id="@+id/info_text5"

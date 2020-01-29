@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,7 +32,6 @@ public class ResultActivity extends AppCompatActivity {
         connectMySql.execute(result);
         nameTextView = findViewById(R.id.machine_name_view);
         info_text = findViewById(R.id.info_text1);
-
 
 
         CardView card6 = findViewById(R.id.card_prevNode1);

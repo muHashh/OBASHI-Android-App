@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Block of codes for FLOATING BUTTON -->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,10 +20,13 @@
         tools:ignore='ScrollViewSize'>
 
         <LinearLayout
+            android:id="@+id/linear_layout_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:ignore="UselessParent">
+
+            <!-- Block of codes for HEADING CARD -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_home1"
@@ -54,6 +56,7 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!-- Block of codes for DEVICE CARD -->
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_view_home2"
@@ -75,7 +78,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Result"
+                        android:text="No Device Found"
                         android:textAlignment="center"
                         android:textColor="@color/whiteColor"
                         android:textSize="20sp"></TextView>
@@ -85,6 +88,8 @@
             </LinearLayout>
     </RelativeLayout>
     </ScrollView>
+
+    <!-- Block of codes for FLOATING BUTTON -->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

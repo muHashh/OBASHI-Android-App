@@ -19,9 +19,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginBottom="10dp"
             tools:ignore="UselessParent">
 
-            <!-- Block of codes for CARDVIEWS -->
+            <!-- Block of codes for ABOUT HEADING -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view1"
@@ -57,6 +58,8 @@
 
             </androidx.cardview.widget.CardView>
 
+            <!-- Block of codes for DEVELOPERS CARD -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view3"
                 android:layout_width="match_parent"
@@ -90,6 +93,7 @@
                     android:text="Developers: \n\nHassan Shahid\nShourya Verma\nStephen Considine\nNico Sperry\nJosé Rodríguez" />
             </androidx.cardview.widget.CardView>
 
+            <!-- Block of codes for TECHNOLOGIES CARD -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view4"
