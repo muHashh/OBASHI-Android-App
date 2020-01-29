@@ -214,7 +214,7 @@
                     android:paddingLeft="8dp"
                     android:paddingBottom="8dp"
                     android:paddingRight="8dp"
-                    app:srcCompat="@mipmap/" />
+                    app:srcCompat="@mipmap/sho" />
 
                 <TextView
                     android:id="@+id/info_text4"
