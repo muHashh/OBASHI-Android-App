@@ -6,90 +6,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10sp"
-        android:layout_marginBottom="10sp"
-        android:layout_marginStart="10sp"
-        android:layout_marginEnd="10sp"
-        tools:ignore='ScrollViewSize'>
-
-        <LinearLayout
-            android:id="@+id/linear_layout_card"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/device_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:ignore="UselessParent">
-
-            <!-- Block of codes for HEADING CARD -->
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_view_home1"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                app:cardBackgroundColor="@color/blackgreyColor"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="5dp"
-                app:cardUseCompatPadding="true">
-
-                <TextView
-                    android:id="@+id/heading_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="SCANNED MACHINES"
-                    android:textStyle="bold"
-                    android:textAlignment="center"
-                    android:textColor="#ffb101"
-                    android:textSize="25sp"></TextView>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- Block of codes for DEVICE CARD -->
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_view_home2"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="5dp"
-                    app:cardUseCompatPadding="true">
-
-                    <TextView
-                        android:id="@+id/result_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="No Device Found"
-                        android:textAlignment="center"
-                        android:textColor="@color/whiteColor"
-                        android:textSize="20sp"></TextView>
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-    </RelativeLayout>
-    </ScrollView>
-
-    <!-- Block of codes for FLOATING BUTTON -->
+            android:scrollbars="vertical"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -104,5 +29,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    </FrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
