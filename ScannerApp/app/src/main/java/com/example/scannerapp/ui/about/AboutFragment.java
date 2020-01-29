@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.scannerapp.CardOpen;
+import com.example.scannerapp.CardOpenActivity;
 import com.example.scannerapp.R;
 
 public class AboutFragment extends Fragment{
@@ -28,7 +28,7 @@ public class AboutFragment extends Fragment{
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CardOpen.class);
+                Intent intent = new Intent(getActivity(), CardOpenActivity.class);
                 intent.putExtra("LAYOUT_NAME", R.layout.card_app);
                 startActivity(intent);
 
@@ -39,7 +39,7 @@ public class AboutFragment extends Fragment{
         card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CardOpen.class);
+                Intent intent = new Intent(getActivity(), CardOpenActivity.class);
                 intent.putExtra("LAYOUT_NAME", R.layout.card_devs);
                 startActivity(intent);
 
@@ -50,7 +50,7 @@ public class AboutFragment extends Fragment{
         card4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CardOpen.class);
+                Intent intent = new Intent(getActivity(), CardOpenActivity.class);
                 intent.putExtra("LAYOUT_NAME", R.layout.card_tech);
                 startActivity(intent);
 

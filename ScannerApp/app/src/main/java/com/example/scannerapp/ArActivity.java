@@ -33,8 +33,8 @@ import com.google.ar.sceneform.ux.ArFragment;
 
 import java.util.Collection;
 
-public class Ar extends AppCompatActivity {
-    private static final String TAG = Ar.class.getSimpleName();
+public class ArActivity extends AppCompatActivity {
+    private static final String TAG = ArActivity.class.getSimpleName();
     private static final double MIN_OPENGL_VERSION = 3.0;
     private static final int REQUEST_CODE = 1;
 
@@ -129,7 +129,7 @@ public class Ar extends AppCompatActivity {
 
         }
         else {
-            ActivityCompat.requestPermissions(Ar.this, permissions, REQUEST_CODE);
+            ActivityCompat.requestPermissions(ArActivity.this, permissions, REQUEST_CODE);
         }
     }
 

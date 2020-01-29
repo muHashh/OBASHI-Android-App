@@ -21,8 +21,8 @@
         <meta-data android:name="com.google.ar.core" android:value="required" />
 
         <activity android:name=".ScanCodeActivity"></activity>
-        <activity android:name=".Ar"></activity>
-        <activity android:name=".CardOpen"></activity>
+        <activity android:name=".ArActivity"></activity>
+        <activity android:name=".CardOpenActivity"></activity>
         <activity android:name=".ResultActivity"></activity>
         <activity
             android:name=".MainActivity"

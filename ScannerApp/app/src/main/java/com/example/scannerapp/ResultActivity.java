@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,12 +32,22 @@ public class ResultActivity extends AppCompatActivity {
         nameTextView = findViewById(R.id.machine_name_view);
         info_text = findViewById(R.id.info_text1);
 
+        Intent intent = this.getIntent();
+
+        if(intent !=null) {
+            String name = intent.getExtras().getString("NAME");
+            ResultActivity.nameTextView.setText(name);
+            ResultActivity.info_text.setText("desc.");
+        } else {
+            ResultActivity.nameTextView.setText("Error");
+        }
+
 
         CardView card6 = findViewById(R.id.card_prevNode1);
         card6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Ar.class);
+                Intent intent = new Intent(getApplicationContext(), ArActivity.class);
                 startActivity(intent);
 
             }
@@ -48,7 +57,7 @@ public class ResultActivity extends AppCompatActivity {
         card7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Ar.class);
+                Intent intent = new Intent(getApplicationContext(), ArActivity.class);
                 startActivity(intent);
 
             }
@@ -96,13 +105,13 @@ public class ResultActivity extends AppCompatActivity {
         // This method takes the value returned by the previous one and then uses it, in this case to set
         // the text of resultTextView to be the list of names of all the devices
         public void onPostExecute(String[] result) {
-            if (result[0].equals("OK")){
-                ResultActivity.nameTextView.setText(result[1]);
-                ResultActivity.info_text.setText(result[2]);
-            }
-            else{
-                ResultActivity.nameTextView.setText(result[1]);
-            }
+//            if (result[0].equals("OK")){
+//                ResultActivity.nameTextView.setText(result[1]);
+//                ResultActivity.info_text.setText(result[2]);
+//            }
+//            else{
+//                ResultActivity.nameTextView.setText(result[1]);
+//            }
         }
     }
 }

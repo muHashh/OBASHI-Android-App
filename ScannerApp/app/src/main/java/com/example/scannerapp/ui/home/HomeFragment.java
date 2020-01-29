@@ -1,6 +1,5 @@
 package com.example.scannerapp.ui.home;
 
-import android.bluetooth.BluetoothClass;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +8,13 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+
 import com.example.scannerapp.R;
 import androidx.recyclerview.widget.*;
+
+import com.example.scannerapp.ScanCodeActivity;
 import com.example.scannerapp.adapter.DeviceAdapter;
 import com.example.scannerapp.adapter.Device;
 import java.util.*;
@@ -28,6 +29,10 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<Device> devices;
     private DeviceAdapter dp;
+
+    public void addDevice(Device device) {
+        devices.add(device);
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -44,9 +49,12 @@ public class HomeFragment extends Fragment {
         dp = new DeviceAdapter(getContext(), devices);
         recyclerView.setAdapter(dp);
 
-        devices.add(new Device("laptop", 500));
+
         devices.add(new Device("laptop2", 501));
         devices.add(new Device("laptop3", 502));
+
+        Intent intent = new Intent(getContext(), ScanCodeActivity.class);
+        intent.putExtra("devices", devices);
 
         return root;
     }

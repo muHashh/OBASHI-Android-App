@@ -1,5 +1,6 @@
 package com.example.scannerapp.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +12,11 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.scannerapp.R;
 import java.util.*;
+
+import com.example.scannerapp.ResultActivity;
 import com.example.scannerapp.adapter.Device;
 
-
 public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceHolder>{
-
 
     private LayoutInflater layoutInflater;
     private ArrayList<Device> devices;
@@ -35,6 +36,16 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceHold
     @Override
     public void onBindViewHolder(@NonNull DeviceHolder holder, int position) {
         holder.txtName.setText(devices.get(position).getName());
+
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(v.getContext(), ResultActivity.class);
+                intent.putExtra("NAME", holder.txtName.getText());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -42,13 +53,16 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceHold
         return devices.size();
     }
 
-    class DeviceHolder extends RecyclerView.ViewHolder {
+    class DeviceHolder extends RecyclerView.ViewHolder{
 
         private TextView txtName;
+        private CardView card;
 
         DeviceHolder(View itemView) {
             super(itemView);
+
             txtName = itemView.findViewById(R.id.txt);
+            card = itemView.findViewById(R.id.device_card);
         }
     }
 }

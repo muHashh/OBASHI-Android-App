@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class CardOpen extends AppCompatActivity {
+public class CardOpenActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
 
