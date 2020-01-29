@@ -51,10 +51,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="OBASHI Data Flow"
+                    android:textColor="#F0F0F0"
                     android:textSize="30dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb101"
-                    android:text="OBASHI Data Flow" />
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
 
@@ -70,10 +70,10 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/blackgreyColor"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -87,10 +87,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="Developers: \n\nHassan Shahid\nShourya Verma\nStephen Considine\nNico Sperry\nJosé Rodríguez"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
-                    android:textSize="17dp"
-                    android:text="Developers: \n\nHassan Shahid\nShourya Verma\nStephen Considine\nNico Sperry\nJosé Rodríguez" />
+                    android:textSize="17dp" />
             </androidx.cardview.widget.CardView>
 
             <!-- Block of codes for TECHNOLOGIES CARD -->
@@ -105,10 +105,10 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/blackgreyColor"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardUseCompatPadding="true">
 
 
                 <LinearLayout
@@ -123,10 +123,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="Technologies: \n\nGoogle AR Core\nLAMP Server\nZXing Library API\nUnity\nSLAM"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
-                    android:textSize="17dp"
-                    android:text="Technologies: \n\nGoogle AR Core\nLAMP Server\nZXing Library API\nUnity\nSLAM" />
+                    android:textSize="17dp" />
             </androidx.cardview.widget.CardView>
 
 

@@ -46,6 +46,7 @@ public class HomeFragment extends Fragment {
 
         devices.add(new Device("laptop", 500));
         devices.add(new Device("laptop2", 501));
+        devices.add(new Device("laptop3", 502));
 
         return root;
     }
