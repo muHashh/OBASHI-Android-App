@@ -64,19 +64,10 @@ public class HomeFragment extends Fragment {
         dp = new DeviceAdapter(getContext(), devices);
         recyclerView.setAdapter(dp);
 
-
         devices.add(new Device("Device Name", 501));
         devices.add(new Device("Device Name", 502));
         devices.add(new Device("Device Name", 501));
         devices.add(new Device("Device Name", 502));
-//
-//
-//        Intent intent = new Intent(getContext(), ScanCodeActivity.class);
-//        intent.putParcelableArrayListExtra("devices", devices);
-//        boolean value = true;
-//        if(value == true)
-//        startActivity(intent);
-//        value = false;
 
         return root;
     }

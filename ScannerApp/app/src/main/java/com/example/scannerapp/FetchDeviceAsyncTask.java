@@ -12,7 +12,6 @@ import java.util.HashMap;
 public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
 
     String[] data = new String[3];
-    private ArrayList<Device> devices;
     private String name;
 
     public FetchDeviceAsyncTask() {
