@@ -26,11 +26,6 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceHold
         this.devices = devices;
     }
 
-    public void swap(ArrayList<Device> devices){
-        this.devices = devices;
-        notifyDataSetChanged();
-    }
-
     @NonNull
     @Override
     public DeviceHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {

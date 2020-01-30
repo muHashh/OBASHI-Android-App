@@ -4,19 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import com.example.scannerapp.adapter.Device;
-import com.example.scannerapp.adapter.DeviceAdapter;
 import com.example.scannerapp.ui.home.HomeFragment;
 import com.google.zxing.Result;
-import java.util.ArrayList;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{

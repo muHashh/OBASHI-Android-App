@@ -55,7 +55,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
         recyclerView = root.findViewById(R.id.device_list);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(llm);
