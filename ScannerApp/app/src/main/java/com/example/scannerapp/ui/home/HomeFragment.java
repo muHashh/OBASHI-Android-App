@@ -5,35 +5,37 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-
 import com.example.scannerapp.R;
 import androidx.recyclerview.widget.*;
-
 import com.example.scannerapp.ScanCodeActivity;
 import com.example.scannerapp.adapter.DeviceAdapter;
 import com.example.scannerapp.adapter.Device;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.*;
 
 
 public class HomeFragment extends Fragment {
 
-    public TextView resultTextView;
     public static String result;
-    LinearLayout linearLayout;
     private HomeViewModel homeViewModel;
     private RecyclerView recyclerView;
     private ArrayList<Device> devices;
     private DeviceAdapter dp;
+    static HomeFragment INSTANCE;
+
+    public static HomeFragment getInstance() {
+        return INSTANCE;
+    }
 
     public void addDevice(Device device) {
         devices.add(device);
+    }
+
+    public void notifyChange() {
+        dp.notifyDataSetChanged();
     }
 
     @Override
@@ -42,6 +44,8 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        INSTANCE = this;
 
         FloatingActionButton fab = root.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -65,10 +69,14 @@ public class HomeFragment extends Fragment {
         devices.add(new Device("Device Name", 502));
         devices.add(new Device("Device Name", 501));
         devices.add(new Device("Device Name", 502));
-
-
-        Intent intent = new Intent(getContext(), ScanCodeActivity.class);
-        intent.putExtra("devices", devices);
+//
+//
+//        Intent intent = new Intent(getContext(), ScanCodeActivity.class);
+//        intent.putParcelableArrayListExtra("devices", devices);
+//        boolean value = true;
+//        if(value == true)
+//        startActivity(intent);
+//        value = false;
 
         return root;
     }

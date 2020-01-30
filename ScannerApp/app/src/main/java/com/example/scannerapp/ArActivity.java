@@ -3,7 +3,6 @@ package com.example.scannerapp;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
@@ -12,15 +11,12 @@ import android.os.Build;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.util.Log;
-
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Plane;
 import com.google.ar.core.Frame;
-
 import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.FrameTime;

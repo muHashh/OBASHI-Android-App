@@ -1,22 +1,35 @@
 package com.example.scannerapp;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
-
 import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
-
+import com.example.scannerapp.adapter.Device;
 import org.json.JSONObject;
-
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
 
     String[] data = new String[3];
+    private ArrayList<Device> devices;
+    private String name;
+
+    public FetchDeviceAsyncTask() {
+    }
+
+    public String getName() {
+        if (name == null)
+            return "Device name not found";
+        return name;
+    }
 
     @Override
     protected String[] doInBackground(String... params) {
         HttpJsonParser httpJsonParser = new HttpJsonParser();
         HashMap<String, String> parameters = new HashMap<>();
         parameters.put("DeviceID", params[0]);
+
         JSONObject jsonObject = httpJsonParser.makeHttpRequest(
                 "fetch_device_details.php", "GET", parameters);
         try {
@@ -47,13 +60,12 @@ public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
 
     // This method takes the value returned by the previous one and then uses it, in this case to set
     // the text of resultTextView to be the list of names of all the devices
+    @Override
     public void onPostExecute(String[] result) {
-        if (result[0].equals("OK")){
-            //HomeFragment.resultTextView.setText(result[2]);
-            //HomeFragment.result = result[1];
-        }
-        else{
-            //HomeFragment.resultTextView.setText(result[1]);
+        if(result[0].equals("OK")) {
+            this.name = result[2];
+        } else {
+            this.name = result[1];
         }
     }
 }
