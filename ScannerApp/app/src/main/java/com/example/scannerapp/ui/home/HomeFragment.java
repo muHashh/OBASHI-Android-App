@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.*;
 import com.example.scannerapp.ScanCodeActivity;
 import com.example.scannerapp.adapter.DeviceAdapter;
 import com.example.scannerapp.adapter.Device;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.*;
 
 
@@ -41,6 +43,15 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        FloatingActionButton fab = root.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ScanCodeActivity.class));
+            }
+        });
+
+
         recyclerView = root.findViewById(R.id.device_list);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(llm);
@@ -50,14 +61,11 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(dp);
 
 
-        devices.add(new Device("laptop2", 501));
-        devices.add(new Device("laptop3", 502));
-        devices.add(new Device("laptop2", 501));
-        devices.add(new Device("laptop3", 502));
-        devices.add(new Device("laptop2", 501));
-        devices.add(new Device("laptop3", 502));
-        devices.add(new Device("laptop2", 501));
-        devices.add(new Device("laptop3", 502));
+        devices.add(new Device("Device Name", 501));
+        devices.add(new Device("Device Name", 502));
+        devices.add(new Device("Device Name", 501));
+        devices.add(new Device("Device Name", 502));
+
 
         Intent intent = new Intent(getContext(), ScanCodeActivity.class);
         intent.putExtra("devices", devices);

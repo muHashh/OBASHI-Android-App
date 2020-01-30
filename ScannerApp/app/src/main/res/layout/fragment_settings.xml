@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Settings"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/gold"
             android:textSize="30dp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
