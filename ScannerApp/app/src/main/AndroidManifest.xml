@@ -24,6 +24,7 @@
         <activity android:name=".ArActivity"></activity>
         <activity android:name=".CardOpenActivity"></activity>
         <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".FetchDeviceAsyncTask"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
