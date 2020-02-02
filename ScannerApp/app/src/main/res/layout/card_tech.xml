@@ -24,7 +24,7 @@
 
             <!-- Block of codes for TECHNOLOGIES CARD -->
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_tech1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -55,11 +55,11 @@
                     android:textColor="@color/gold"
                     android:textSize="30dp"
                     android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- Block of codes for TECHNOLOGIES DETAILS CARD -->
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_tech2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,7 +112,7 @@ in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclu
                     android:textColor="@color/whiteColor"
                     android:textColorLink="#2196F3"
                     android:textSize="17dp" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </RelativeLayout>

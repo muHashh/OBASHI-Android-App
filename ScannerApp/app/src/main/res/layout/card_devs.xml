@@ -24,7 +24,7 @@
 
             <!-- Block of codes for DEV HEADING -->
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_devs1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -55,12 +55,12 @@
                     android:textColor="@color/gold"
                     android:textSize="30dp"
                     android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
 
             <!-- Block of codes for DEV INFO -->
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_devs2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -118,10 +118,10 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_devs3"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -180,9 +180,9 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_devs4"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -241,9 +241,9 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_devs5"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -302,9 +302,9 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_devs6"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -363,7 +363,7 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </RelativeLayout>

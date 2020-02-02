@@ -1,12 +1,8 @@
 package com.example.scannerapp.ui.home;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.AsyncTask;
 import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
-import com.example.scannerapp.adapter.Device;
 import org.json.JSONObject;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {

@@ -23,7 +23,7 @@
 
             <!-- Block of codes for ABOUT HEADING -->
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_app1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -54,11 +54,11 @@
                     android:textColor="@color/gold"
                     android:textSize="30dp"
                     android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- Block of codes for ABOUT DETAILS APP -->
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_app2"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -90,7 +90,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
                     android:textSize="17dp" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </RelativeLayout>

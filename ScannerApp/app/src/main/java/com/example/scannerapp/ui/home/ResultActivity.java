@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 public class ResultActivity extends AppCompatActivity {
 
-    public  static TextView nameTextView;
+    public static TextView nameTextView;
     public static TextView info_text;
     private String result;
 

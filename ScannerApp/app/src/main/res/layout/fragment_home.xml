@@ -25,7 +25,7 @@
 
     <!-- Block of codes for ABOUT HEADING -->
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_view1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -57,7 +57,7 @@
             android:textSize="30dp"
             android:textStyle="bold" />
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
     <FrameLayout
