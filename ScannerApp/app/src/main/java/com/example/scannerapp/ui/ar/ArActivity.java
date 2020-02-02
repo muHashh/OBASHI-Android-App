@@ -1,4 +1,4 @@
-package com.example.scannerapp;
+package com.example.scannerapp.ui.ar;
 
 import android.Manifest;
 import android.app.Activity;
@@ -14,6 +14,8 @@ import android.util.Log;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.example.scannerapp.R;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Plane;
 import com.google.ar.core.Frame;

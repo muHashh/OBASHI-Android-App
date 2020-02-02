@@ -1,4 +1,4 @@
-package com.example.scannerapp;
+package com.example.scannerapp.ui.home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +8,8 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+
 import com.example.scannerapp.adapter.Device;
-import com.example.scannerapp.ui.home.HomeFragment;
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 

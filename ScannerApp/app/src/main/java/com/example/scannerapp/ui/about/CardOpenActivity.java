@@ -1,4 +1,4 @@
-package com.example.scannerapp;
+package com.example.scannerapp.ui.about;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;

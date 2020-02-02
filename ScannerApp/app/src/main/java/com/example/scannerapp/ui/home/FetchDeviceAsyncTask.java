@@ -1,4 +1,4 @@
-package com.example.scannerapp;
+package com.example.scannerapp.ui.home;
 
 import android.app.Activity;
 import android.content.Context;

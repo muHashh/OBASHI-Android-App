@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.scannerapp.R;
 import androidx.recyclerview.widget.*;
-import com.example.scannerapp.ScanCodeActivity;
+
 import com.example.scannerapp.adapter.DeviceAdapter;
 import com.example.scannerapp.adapter.Device;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), ScanCodeActivity.class));
+                startActivity(new Intent(view.getContext(), ScanCodeActivity.class));
             }
         });
 
@@ -63,10 +63,11 @@ public class HomeFragment extends Fragment {
         dp = new DeviceAdapter(getContext(), devices);
         recyclerView.setAdapter(dp);
 
-        devices.add(new Device("Device Name", 501));
-        devices.add(new Device("Device Name", 502));
-        devices.add(new Device("Device Name", 501));
-        devices.add(new Device("Device Name", 502));
+        devices.add(new Device("Laptop", 5011));
+        devices.add(new Device("Computer", 5022));
+        devices.add(new Device("Server", 5031));
+        devices.add(new Device("Workstation", 5052));
+        devices.add(new Device("Printer", 5066));
 
         return root;
     }

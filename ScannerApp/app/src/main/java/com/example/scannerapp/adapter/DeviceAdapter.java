@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Context;
 import androidx.annotation.NonNull;
@@ -13,8 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.scannerapp.R;
 import java.util.*;
 
-import com.example.scannerapp.ResultActivity;
-import com.example.scannerapp.adapter.Device;
+import com.example.scannerapp.ui.home.ResultActivity;
 
 public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceHolder>{
 

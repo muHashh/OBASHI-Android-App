@@ -1,4 +1,4 @@
-package com.example.scannerapp;
+package com.example.scannerapp.ui.home;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
-import com.example.scannerapp.ui.home.HomeFragment;
+import com.example.scannerapp.R;
+import com.example.scannerapp.ui.ar.ArActivity;
 
 import org.json.JSONObject;
 
@@ -47,7 +48,7 @@ public class ResultActivity extends AppCompatActivity {
         card6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ArActivity.class);
+                Intent intent = new Intent(view.getContext(), ArActivity.class);
                 startActivity(intent);
 
             }
@@ -57,7 +58,7 @@ public class ResultActivity extends AppCompatActivity {
         card7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ArActivity.class);
+                Intent intent = new Intent(view.getContext(), ArActivity.class);
                 startActivity(intent);
 
             }

@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.fragment.app.Fragment;
 
 import com.example.scannerapp.MainActivity;
-import com.example.scannerapp.ArActivity;
 import com.example.scannerapp.R;
 
 public class ArAppFragment extends Fragment {

@@ -13,6 +13,7 @@ import org.junit.Test;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.rule.GrantPermissionRule;
 
+import com.example.scannerapp.ui.home.ScanCodeActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import static androidx.test.espresso.Espresso.onView;
