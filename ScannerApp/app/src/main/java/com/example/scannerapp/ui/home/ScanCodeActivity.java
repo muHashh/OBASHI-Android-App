@@ -8,7 +8,10 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 
+import com.example.scannerapp.R;
 import com.example.scannerapp.adapter.Device;
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -34,10 +37,8 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         connectMySql.execute(result.getText());
 
         Log.i("ScanCodeActivity", "name of device: "+ connectMySql.getName());
-
         HomeFragment hf = HomeFragment.getInstance();
-        hf.addDevice(new Device(connectMySql.getName(), 500));
-        hf.notifyChange();
+        hf.ll.setVisibility(View.VISIBLE);
 
         onBackPressed();
     }
