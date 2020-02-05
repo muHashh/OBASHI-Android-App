@@ -23,7 +23,6 @@
         <activity android:name=".ui.home.ScanCodeActivity"></activity>
         <activity android:name=".ui.ar.ArActivity"></activity>
         <activity android:name=".ui.about.CardOpenActivity"></activity>
-        <activity android:name=".ui.home.ResultActivity"></activity>
         <activity android:name=".ui.home.FetchDeviceAsyncTask"></activity>
         <activity
             android:name=".MainActivity"

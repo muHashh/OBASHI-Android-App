@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.scannerapp.R;
 import java.util.*;
 
-import com.example.scannerapp.ui.home.ResultActivity;
-
 public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceHolder>{
 
     private LayoutInflater layoutInflater;
@@ -35,15 +33,15 @@ public class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.DeviceHold
     public void onBindViewHolder(@NonNull DeviceHolder holder, int position) {
         holder.txtName.setText(devices.get(position).getName());
 
-        holder.card.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(v.getContext(), ResultActivity.class);
-                intent.putExtra("NAME", holder.txtName.getText());
-                v.getContext().startActivity(intent);
-            }
-        });
+//        holder.card.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent = new Intent(v.getContext(), ResultActivity.class);
+//                intent.putExtra("NAME", holder.txtName.getText());
+//                v.getContext().startActivity(intent);
+//            }
+//        });
     }
 
     @Override

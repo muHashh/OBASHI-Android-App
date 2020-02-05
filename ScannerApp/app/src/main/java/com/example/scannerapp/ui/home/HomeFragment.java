@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.scannerapp.R;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.*;
 
 import com.example.scannerapp.adapter.DeviceAdapter;
 import com.example.scannerapp.adapter.Device;
+import com.example.scannerapp.ui.ar.ArActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.*;
 
@@ -36,6 +39,8 @@ public class HomeFragment extends Fragment {
     private DeviceAdapter dp;
     static HomeFragment INSTANCE;
     LinearLayout ll;
+    TextView name;
+    TextView desc;
 
     public static HomeFragment getInstance() {
         return INSTANCE;
@@ -57,11 +62,33 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         INSTANCE = this;
+
         ll = root.findViewById(R.id.results);
-
-
+        name = root.findViewById(R.id.machine_name_view);
+        desc = root.findViewById(R.id.description);
         int begoneThot = View.GONE;
         ll.setVisibility(begoneThot);
+
+
+        CardView card6 = root.findViewById(R.id.card_prevNode1);
+        card6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ArActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        CardView card7 = root.findViewById(R.id.card_nextNode1);
+        card7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ArActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         FloatingActionButton fab = root.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

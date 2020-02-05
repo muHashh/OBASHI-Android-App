@@ -1,6 +1,8 @@
 package com.example.scannerapp.ui.home;
 
 import android.os.AsyncTask;
+import android.widget.TextView;
+
 import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
 import org.json.JSONObject;
 import java.util.HashMap;
@@ -9,8 +11,10 @@ public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
 
     String[] data = new String[3];
     private String name;
+    private TextView tv;
 
-    public FetchDeviceAsyncTask() {
+    public FetchDeviceAsyncTask(TextView tv) {
+        this.tv = tv;
     }
 
     public String getName() {
@@ -58,9 +62,9 @@ public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
     @Override
     public void onPostExecute(String[] result) {
         if(result[0].equals("OK")) {
-            this.name = result[2];
+            tv.setText(result[2]);
         } else {
-            this.name = result[1];
+            tv.setText(result[1]);
         }
     }
 }
