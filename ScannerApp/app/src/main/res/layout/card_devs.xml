@@ -24,7 +24,7 @@
 
             <!-- Block of codes for DEV HEADING -->
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -55,12 +55,12 @@
                     android:textColor="@color/gold"
                     android:textSize="30dp"
                     android:textStyle="bold" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
             <!-- Block of codes for DEV INFO -->
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -92,7 +92,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/hassan" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text2"
@@ -118,10 +118,10 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs3"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -154,7 +154,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/pepe" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text3"
@@ -180,9 +180,9 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs4"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -215,7 +215,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text4"
@@ -241,9 +241,9 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs5"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -276,7 +276,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/steg" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text5"
@@ -302,9 +302,9 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs6"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -337,7 +337,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text6"
@@ -363,7 +363,7 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
     </RelativeLayout>
