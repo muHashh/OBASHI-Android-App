@@ -75,9 +75,11 @@ public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
             hf.name.setText(result[2]);
             hf.desc.setText(result[3]);
             hf.ll.setVisibility(View.VISIBLE);
+            hf.nameCard.setVisibility(View.VISIBLE);
         } else {
             hf.name.setText(result[1]);
             hf.ll.setVisibility(View.GONE);
+            hf.nameCard.setVisibility(View.VISIBLE);
         }
     }
 }

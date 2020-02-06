@@ -16,6 +16,7 @@ import com.example.scannerapp.R;
 import androidx.recyclerview.widget.*;
 
 import com.example.scannerapp.ui.ar.ArActivity;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.*;
 
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     static HomeFragment INSTANCE;
     LinearLayout ll;
+    MaterialCardView nameCard;
     TextView name;
     TextView desc;
 
@@ -54,7 +56,9 @@ public class HomeFragment extends Fragment {
         ll = root.findViewById(R.id.results);
         name = root.findViewById(R.id.machine_name_view);
         desc = root.findViewById(R.id.description);
+        nameCard = root.findViewById(R.id.card_view_app1);
         ll.setVisibility(View.GONE);
+        nameCard.setVisibility(View.GONE);
 
 
         CardView prevNodes = root.findViewById(R.id.card_prevNode1);
