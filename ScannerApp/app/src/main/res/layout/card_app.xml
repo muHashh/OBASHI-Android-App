@@ -24,7 +24,7 @@
             <!-- Block of codes for ABOUT HEADING -->
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_view_app1"
+                android:id="@+id/card_about_app1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -59,7 +59,7 @@
             <!-- Block of codes for ABOUT DETAILS APP -->
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_view_app2"
+                android:id="@+id/card_about_app2"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"

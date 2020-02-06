@@ -6,4 +6,5 @@
     <color name="whiteColor">#ffffff</color>
     <color name="gold">#ffde03</color>
     <color name="blackgreyColor">#37474F</color>
+    <color name="darkgrey">#303030</color>
 </resources>
