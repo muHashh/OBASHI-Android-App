@@ -92,7 +92,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/hassan" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text2"
@@ -154,7 +154,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/pepe" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text3"
@@ -215,7 +215,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text4"
@@ -276,7 +276,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/steg" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text5"
@@ -285,7 +285,7 @@
                     android:layout_gravity="right"
                     android:paddingTop="10dp"
                     android:paddingRight="10dp"
-                    android:text="Stephen Considine"
+                    android:text="Steg Considine"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
                     android:textSize="25dp" />
@@ -298,7 +298,7 @@
                     android:paddingTop="10dp"
                     android:paddingRight="10dp"
                     android:paddingBottom="10dp"
-                    android:text="Integration / Quality Control Developer\n2324936c@student.gla.ac.uk"
+                    android:text="Quality Control Developer\n2324936c@student.gla.ac.uk"
                     android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
@@ -337,7 +337,7 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text6"
