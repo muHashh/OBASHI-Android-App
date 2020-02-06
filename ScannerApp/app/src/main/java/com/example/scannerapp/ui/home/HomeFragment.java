@@ -15,8 +15,6 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.scannerapp.R;
 import androidx.recyclerview.widget.*;
 
-import com.example.scannerapp.adapter.DeviceAdapter;
-import com.example.scannerapp.adapter.Device;
 import com.example.scannerapp.ui.ar.ArActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.*;
@@ -35,8 +33,6 @@ public class HomeFragment extends Fragment {
     public static String result;
     private HomeViewModel homeViewModel;
     private RecyclerView recyclerView;
-    private ArrayList<Device> devices;
-    private DeviceAdapter dp;
     static HomeFragment INSTANCE;
     LinearLayout ll;
     TextView name;
@@ -44,14 +40,6 @@ public class HomeFragment extends Fragment {
 
     public static HomeFragment getInstance() {
         return INSTANCE;
-    }
-
-    public void addDevice(Device device) {
-        devices.add(device);
-    }
-
-    public void notifyChange() {
-        dp.notifyDataSetChanged();
     }
 
     @Override
@@ -66,12 +54,11 @@ public class HomeFragment extends Fragment {
         ll = root.findViewById(R.id.results);
         name = root.findViewById(R.id.machine_name_view);
         desc = root.findViewById(R.id.description);
-        int begoneThot = View.GONE;
-        ll.setVisibility(begoneThot);
+        ll.setVisibility(View.GONE);
 
 
-        CardView card6 = root.findViewById(R.id.card_prevNode1);
-        card6.setOnClickListener(new View.OnClickListener() {
+        CardView prevNodes = root.findViewById(R.id.card_prevNode1);
+        prevNodes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ArActivity.class);
@@ -80,8 +67,8 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        CardView card7 = root.findViewById(R.id.card_nextNode1);
-        card7.setOnClickListener(new View.OnClickListener() {
+        CardView nextNodes = root.findViewById(R.id.card_nextNode1);
+        nextNodes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ArActivity.class);

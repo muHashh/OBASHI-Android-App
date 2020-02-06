@@ -12,9 +12,11 @@ public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
     String[] data = new String[3];
     private String name;
     private TextView tv;
+    private TextView Desc;
 
-    public FetchDeviceAsyncTask(TextView tv) {
+    public FetchDeviceAsyncTask(TextView tv, TextView Desc) {
         this.tv = tv;
+        this.Desc = Desc;
     }
 
     public String getName() {
@@ -43,6 +45,7 @@ public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
                 data[0] = "OK";
                 data[1] = String.valueOf(device.getInt("DeviceID"));
                 data[2] = device.getString("Name");
+                data[3] = device.getString("Description");
             }
             else{
                 data[0] = "Problem";
@@ -63,6 +66,7 @@ public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
     public void onPostExecute(String[] result) {
         if(result[0].equals("OK")) {
             tv.setText(result[2]);
+            Desc.setText(result[3]);
         } else {
             tv.setText(result[1]);
         }

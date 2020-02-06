@@ -12,11 +12,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.scannerapp.R;
 import com.example.scannerapp.adapter.Device;
 import com.example.scannerapp.ui.ar.ArActivity;
 import com.google.zxing.Result;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
@@ -38,9 +40,8 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
     public void handleResult(Result result){
         HomeFragment hf = HomeFragment.getInstance();
         hf.ll.setVisibility(View.VISIBLE);
-        hf.desc.setText("description...");
 
-        FetchDeviceAsyncTask connectMySql = new FetchDeviceAsyncTask(hf.name);
+        FetchDeviceAsyncTask connectMySql = new FetchDeviceAsyncTask(hf.name, hf.desc);
         connectMySql.execute(result.getText());
 
         onBackPressed();
@@ -80,4 +81,5 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         verifyPermissions();
     }
+
 }
