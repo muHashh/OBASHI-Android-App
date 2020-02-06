@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class FetchDeviceAsyncTask extends AsyncTask<String, String, String[]> {
 
-    String[] data = new String[3];
+    String[] data = new String[4];
     private String name;
     private TextView tv;
     private TextView Desc;
