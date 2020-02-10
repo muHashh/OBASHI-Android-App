@@ -59,6 +59,9 @@ dependencies {
     def recyclerview_version = "1.1.0"
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
 
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.2.4'
+    androidTestImplementation 'org.mockito:mockito-core:3.2.4'
+    implementation 'androidx.fragment:fragment-testing:1.2.0'
 
     //Sceneform UX provides UX resources, including ArFragment//
 
