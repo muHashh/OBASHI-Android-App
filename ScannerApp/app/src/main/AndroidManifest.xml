@@ -20,10 +20,16 @@
 
         <meta-data android:name="com.google.ar.core" android:value="required" />
 
-        <activity android:name=".ui.home.ScanCodeActivity"></activity>
-        <activity android:name=".ui.ar.ArActivity"></activity>
+        <activity android:name=".ui.home.ScanCodeActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".ui.ar.ArActivity"
+            android:screenOrientation="portrait"></activity>
+
         <activity android:name=".ui.about.CardOpenActivity"></activity>
+
         <activity android:name=".ui.home.FetchDeviceAsyncTask"></activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
