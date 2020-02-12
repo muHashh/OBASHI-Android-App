@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     static HomeFragment INSTANCE;
     LinearLayout ll;
-    MaterialCardView nameCard;
+    LinearLayout error;
     TextView name;
     TextView desc;
 
@@ -54,12 +54,19 @@ public class HomeFragment extends Fragment {
         INSTANCE = this;
 
         ll = root.findViewById(R.id.results);
+<<<<<<< HEAD
+=======
         name = root.findViewById(R.id.machine_name_view);
         desc = root.findViewById(R.id.description);
-        nameCard = root.findViewById(R.id.resultcard);
+        nameCard = root.findViewById(R.id.machine_name);
+>>>>>>> 715ccc655184f679298e674f94ffc09e5996dc12
         ll.setVisibility(View.GONE);
-        nameCard.setVisibility(View.GONE);
 
+        error = root.findViewById(R.id.error);
+        error.setVisibility(View.GONE);
+
+        name = root.findViewById(R.id.machine_name_view);
+        desc = root.findViewById(R.id.description);
 
         CardView prevNodes = root.findViewById(R.id.card_prevNode1);
         prevNodes.setOnClickListener(new View.OnClickListener() {
