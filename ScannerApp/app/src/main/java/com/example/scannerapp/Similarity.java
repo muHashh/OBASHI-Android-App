@@ -46,6 +46,36 @@ public class Similarity {
             }
             mostSimilar.put(key, dotProduct/(name.length()*query.length()));
         }
+        for(int key: mostSimilar.keySet()){
+            String name = names.get(key);
+            int[][] stringDistanceTable = new int[name.length()+1][query.length()+1];
+            for(int i = 0; i < name.length()+1; i++){
+                stringDistanceTable[i][0] = 0;
+            }
+            for(int i = 0; i < query.length()+1; i++){
+                stringDistanceTable[0][i] = 0;
+            }
+            for(int i = 1; i < name.length()+1; i++){
+                for(int j = 1; j < query.length()+1; j++){
+                    if(name.charAt(i) == query.charAt(j)){
+                        stringDistanceTable[i][j] = stringDistanceTable[i-1][j-1];
+                    }
+                    else{
+                        int minimum = stringDistanceTable[i-1][j-1];
+                        if(stringDistanceTable[i][j-1] < minimum){
+                            minimum = stringDistanceTable[i][j-1];
+                        }
+                        if(stringDistanceTable[i-1][j] < minimum){
+                            minimum = stringDistanceTable[i-1][j];
+                        }
+                        stringDistanceTable[i][j] = minimum + 1;
+                    }
+                }
+            }
+            int distance = stringDistanceTable[name.length()][query.length()];
+            mostSimilar.put(key, mostSimilar.get(key) + (query.length()-distance));
+        }
+
         return mostSimilar;
     }
 
