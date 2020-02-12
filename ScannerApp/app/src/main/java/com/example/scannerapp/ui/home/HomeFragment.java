@@ -54,12 +54,7 @@ public class HomeFragment extends Fragment {
         INSTANCE = this;
 
         ll = root.findViewById(R.id.results);
-<<<<<<< HEAD
-=======
-        name = root.findViewById(R.id.machine_name_view);
-        desc = root.findViewById(R.id.description);
-        nameCard = root.findViewById(R.id.machine_name);
->>>>>>> 715ccc655184f679298e674f94ffc09e5996dc12
+
         ll.setVisibility(View.GONE);
 
         error = root.findViewById(R.id.error);
