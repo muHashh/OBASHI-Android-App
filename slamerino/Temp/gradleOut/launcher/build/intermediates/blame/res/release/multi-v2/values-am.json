@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/hassan/cs/csp3-main/slamerino/Temp/gradleOut/launcher/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-am/values-am.xml",
+            "map": [
+                {
+                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/a369d1195f0b5345be6dfeb2545ab00b/res/values-am/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,234,280,382,485",
+                        "endColumns": "43,45,101,102,78",
+                        "endOffsets": "233,279,381,484,563"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,103,153,259,366",
+                        "endColumns": "47,49,105,106,82",
+                        "endOffsets": "98,148,254,361,444"
+                    }
+                }
+            ]
+        }
+    ]
+}
