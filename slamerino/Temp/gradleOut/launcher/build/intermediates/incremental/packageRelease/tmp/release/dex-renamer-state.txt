@@ -1,4 +1,0 @@
-#Wed Feb 12 19:12:26 GMT 2020
-base.0=/home/hassan/cs/csp3-main/slamerino/Temp/gradleOut/launcher/build/intermediates/transforms/dexMerger/release/0
-path.0=classes.dex
-renamed.0=classes.dex

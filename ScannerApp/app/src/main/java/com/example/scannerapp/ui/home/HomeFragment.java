@@ -31,9 +31,7 @@ import java.util.*;
 
 public class HomeFragment extends Fragment {
 
-    public static String result;
     private HomeViewModel homeViewModel;
-    private RecyclerView recyclerView;
     static HomeFragment INSTANCE;
     LinearLayout ll;
     LinearLayout error;
@@ -54,7 +52,6 @@ public class HomeFragment extends Fragment {
         INSTANCE = this;
 
         ll = root.findViewById(R.id.results);
-
         ll.setVisibility(View.GONE);
 
         error = root.findViewById(R.id.error);
