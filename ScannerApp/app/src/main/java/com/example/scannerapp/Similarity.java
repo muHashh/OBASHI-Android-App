@@ -73,7 +73,11 @@ public class Similarity {
                 }
             }
             int distance = stringDistanceTable[name.length()][query.length()];
-            mostSimilar.put(key, mostSimilar.get(key) + (query.length()-distance));
+            int largestLength = query.length();
+            if(name.length() > query.length()){
+                largestLength = name.length();
+            }
+            mostSimilar.put(key, mostSimilar.get(key)/2 + (largestLength-distance)/(2*largestLength));
         }
 
         return mostSimilar;
