@@ -1,6 +1,11 @@
 package com.example.scannerapp;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 public class Similarity {
 
@@ -78,7 +83,7 @@ public class Similarity {
             mostSimilar.put(key, mostSimilar.get(key)/2 + (largestLength-distance)/(2*largestLength));
         }
 
-        return mostSimilar;
+        return sortHashMapByValues(mostSimilar);
     }
 
     public int dotProduct(HashMap<Character, Integer> chars1,
@@ -90,6 +95,36 @@ public class Similarity {
             }
         }
         return dotProduct;
+    }
+
+    public LinkedHashMap<Integer, Double> sortHashMapByValues(HashMap<Integer, Double> passedMap) {
+        List<Integer> mapKeys = new ArrayList<>(passedMap.keySet());
+        List<Double> mapValues = new ArrayList<>(passedMap.values());
+        Collections.sort(mapValues);
+        Collections.reverse(mapValues);
+        Collections.sort(mapKeys);
+
+        LinkedHashMap<Integer, Double> sortedMap =
+                new LinkedHashMap<>();
+
+        Iterator<Double> valueIt = mapValues.iterator();
+        while (valueIt.hasNext()) {
+            Double val = valueIt.next();
+            Iterator<Integer> keyIt = mapKeys.iterator();
+
+            while (keyIt.hasNext()) {
+                Integer key = keyIt.next();
+                Double comp1 = passedMap.get(key);
+                Double comp2 = val;
+
+                if (comp1.equals(comp2)) {
+                    keyIt.remove();
+                    sortedMap.put(key, val);
+                    break;
+                }
+            }
+        }
+        return sortedMap;
     }
 
 }
