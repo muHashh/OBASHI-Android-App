@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.scannerapp.R;
-import com.example.scannerapp.adapter.Device;
 import com.example.scannerapp.ui.ar.ArActivity;
 import com.google.zxing.Result;
 
