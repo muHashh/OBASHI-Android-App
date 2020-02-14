@@ -11,9 +11,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.scannerapp.R;
 
+import java.util.HashMap;
+
 public class SearchFragment extends Fragment {
 
     private SearchViewModel searchViewModel;
+    private static SearchFragment INSTANCE;
+    private HashMap<Integer, String> devices;
+
+    public static SearchFragment getInstance() {
+        return INSTANCE;
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -21,6 +29,9 @@ public class SearchFragment extends Fragment {
         searchViewModel =
                 ViewModelProviders.of(this).get(SearchViewModel.class);
         View root = inflater.inflate(R.layout.fragment_search, container, false);
+        INSTANCE = this;
+        FetchAllDevicesAsyncTask getDevices = new FetchAllDevicesAsyncTask();
+        getDevices.execute("");
 
         return root;
     }
