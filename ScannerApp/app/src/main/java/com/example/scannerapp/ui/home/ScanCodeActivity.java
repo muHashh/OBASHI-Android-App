@@ -2,15 +2,22 @@ package com.example.scannerapp.ui.home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-import com.example.scannerapp.adapter.Device;
+import com.example.scannerapp.R;
+import com.example.scannerapp.ui.ar.ArActivity;
 import com.google.zxing.Result;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
@@ -30,14 +37,11 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
 
     @Override
     public void handleResult(Result result){
-        FetchDeviceAsyncTask connectMySql = new FetchDeviceAsyncTask();
-        connectMySql.execute(result.getText());
-
-        Log.i("ScanCodeActivity", "name of device: "+ connectMySql.getName());
-
         HomeFragment hf = HomeFragment.getInstance();
-        hf.addDevice(new Device(connectMySql.getName(), 500));
-        hf.notifyChange();
+        hf.ll.setVisibility(View.VISIBLE);
+
+        FetchDeviceAsyncTask connectMySql = new FetchDeviceAsyncTask(hf.name, hf.desc, hf.ll, hf.error);
+        connectMySql.execute(result.getText());
 
         onBackPressed();
     }
@@ -76,4 +80,5 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         verifyPermissions();
     }
+
 }
