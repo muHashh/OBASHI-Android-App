@@ -15,6 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.scannerapp.R;
 import com.example.scannerapp.ui.settings.SettingsViewModel;
 import me.dm7.barcodescanner.core.ViewFinderView;
+/**
+ *
+ * When you click on the settings button the page will be displayed to the design in fragment_settings.xml
+ */
+
 
 public class SettingsFragment extends Fragment {
 
