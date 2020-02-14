@@ -6,12 +6,20 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import java.util.HashMap;
 
-public class FetchAllDevicesAsyncTask extends AsyncTask<String, String, HashMap<Integer, String>>{
-    HashMap<Integer, String> data = new HashMap<>();
-    int errorKey = -1;
+/**
+ * Class used for retrieving all devices that can be found on the database.
+ * To use it, call the method execute(), without parameters, which does not return anything.
+ * As of now, it can only be use by SearchFragment, as it has to update a field in that class
+ */
+public class FetchAllDevicesAsyncTask extends AsyncTask<Void, String, HashMap<Integer, String>>{
+    HashMap<Integer, String> data = new HashMap<>(); //HashMap that will contain the data to be used
+    // Constant that will be used to add an error message to data
+    // As no device can have key -1, we can check if there is some problem by looking if
+    // ERROR_KEY is a key of data
+    private final int ERROR_KEY = -1;
 
     @Override
-    protected HashMap<Integer, String> doInBackground(String... params) {
+    protected HashMap<Integer, String> doInBackground(Void... params) {
         // Creates a new HttpJsonParser object
         // Then executes the method makeHttpRequest, with arguments the name of the script,
         // "GET", because it is getting data from the database, not changing it, and null,
@@ -28,7 +36,7 @@ public class FetchAllDevicesAsyncTask extends AsyncTask<String, String, HashMap<
             if (success == 1) {
                 // Gets the array of devices
                 devices = jsonObject.getJSONArray(httpJsonParser.getKeyData());
-                // For each device gets its name and adds it to the String devicesList
+                // For each device gets its name and adds it to the HashMap
                 for (int i = 0; i < devices.length(); i++) {
                     JSONObject device = devices.getJSONObject(i);
                     String deviceName = device.getString("Name");
@@ -37,26 +45,28 @@ public class FetchAllDevicesAsyncTask extends AsyncTask<String, String, HashMap<
                 }
 
             }
+            // If the connection was successful, but the retrieval was not,
+            // empty the HashMap and add a the corresponding error message
             else{
                 data.clear();
-                data.put(errorKey, jsonObject.getString(httpJsonParser.getKeyMessage()));
+                data.put(ERROR_KEY, jsonObject.getString(httpJsonParser.getKeyMessage()));
             }
         }
-        // If there is a problem handling the connection or the JSON object
-        // return a generic connection problem message
+        // If there is a problem handling the connection or the JSON object,
+        // empty the HashMap and add a generic error message
         catch (Exception e) {
             data.clear();
             data.put(-1, "There was a connection problem. Please try again");
         }
-        // Returns the list or error message
+        // Returns the list
         return data;
     }
 
     // This method takes the value returned by the previous one and then uses it, in this case to set
-    // the text of resultTextView to be the list of names of all the devices
+    // HashMap devices in SearchFragment to be the list
     protected void onPostExecute(HashMap<Integer, String> result) {
         SearchFragment sf = SearchFragment.getInstance();
-
+        sf.devices = result;
     }
 
 }

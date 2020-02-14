@@ -17,7 +17,7 @@ public class SearchFragment extends Fragment {
 
     private SearchViewModel searchViewModel;
     private static SearchFragment INSTANCE;
-    private HashMap<Integer, String> devices;
+    HashMap<Integer, String> devices;
 
     public static SearchFragment getInstance() {
         return INSTANCE;
@@ -31,7 +31,7 @@ public class SearchFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_search, container, false);
         INSTANCE = this;
         FetchAllDevicesAsyncTask getDevices = new FetchAllDevicesAsyncTask();
-        getDevices.execute("");
+        getDevices.execute();
 
         return root;
     }

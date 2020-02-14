@@ -1,21 +1,34 @@
-package com.example.scannerapp;
+package com.example.scannerapp.ui.search;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+/**
+ * This class is used to calculate the similarity between a user query and each of the names in a HashMap
+ */
 public class Similarity {
 
     private HashMap<Integer, String> deviceList;
 
+    /**
+     *
+     * @param newDeviceList HashMap with keys integers and values strings. It will be used by
+     *                      getSimilar to calculate the similarity between each of its values
+     *                      and a user query
+     */
     public Similarity(HashMap<Integer, String> newDeviceList){
         deviceList = newDeviceList;
     }
 
-    public HashMap<Integer, Double> getSimilar(String query){
+    /**
+     *
+     * @param query A user query, to be compared with the values of deviceList
+     * @return An ordered LinkedHashMap, with keys ints and values doubles
+     */
+    public LinkedHashMap<Integer, Double> getSimilar(String query){
         HashMap<Integer, String> names = (HashMap)deviceList.clone();
         for(int key: names.keySet()){
             String name = names.get(key).toLowerCase();
@@ -86,7 +99,14 @@ public class Similarity {
         return sortHashMapByValues(mostSimilar);
     }
 
-    public int dotProduct(HashMap<Character, Integer> chars1,
+    /**
+     * This method calculates the dot product of two HashMaps. The dimension of the dot product
+     * are the keys of both HashMaps, and it works like a normal dot product
+     * @param chars1 A HashMap where the keys are characters and the values integers
+     * @param chars2 Same as above
+     * @return A positive integer that is the dotProduct of the two parameters
+     */
+    private int dotProduct(HashMap<Character, Integer> chars1,
                           HashMap<Character, Integer> chars2) {
         int dotProduct = 0;
         for(char character: chars1.keySet()){
@@ -97,29 +117,26 @@ public class Similarity {
         return dotProduct;
     }
 
-    public LinkedHashMap<Integer, Double> sortHashMapByValues(HashMap<Integer, Double> passedMap) {
+    /**
+     * This method orders a HashMap by its values in descending order
+     * @param passedMap An unordered HashMap, with keys integers and values doubles
+     * @return An ordered linkedHashMap, with keys integers and values doubles
+     */
+    private LinkedHashMap<Integer, Double> sortHashMapByValues(HashMap<Integer, Double> passedMap) {
         List<Integer> mapKeys = new ArrayList<>(passedMap.keySet());
         List<Double> mapValues = new ArrayList<>(passedMap.values());
+        // Sorts, in ascending order, the values and then reverses the list
         Collections.sort(mapValues);
         Collections.reverse(mapValues);
-        Collections.sort(mapKeys);
+        LinkedHashMap<Integer, Double> sortedMap = new LinkedHashMap<>();
 
-        LinkedHashMap<Integer, Double> sortedMap =
-                new LinkedHashMap<>();
-
-        Iterator<Double> valueIt = mapValues.iterator();
-        while (valueIt.hasNext()) {
-            Double val = valueIt.next();
-            Iterator<Integer> keyIt = mapKeys.iterator();
-
-            while (keyIt.hasNext()) {
-                Integer key = keyIt.next();
-                Double comp1 = passedMap.get(key);
-                Double comp2 = val;
-
-                if (comp1.equals(comp2)) {
-                    keyIt.remove();
-                    sortedMap.put(key, val);
+        // For each value, get its corresponding key and add it to sortedMap
+        for(Double value: mapValues){
+            for(Integer key: mapKeys){
+                Double comp = passedMap.get(key);
+                if (comp.equals(value)) {
+                    mapKeys.remove(key);
+                    sortedMap.put(key, value);
                     break;
                 }
             }

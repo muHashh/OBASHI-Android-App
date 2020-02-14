@@ -22,10 +22,10 @@
             android:orientation="vertical"
             tools:ignore="UselessParent">
 
-            <!-- Block of codes for SETTINGS CARD -->
+            <!-- Block of codes for SEARCH CARD -->
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/card_view_settings1"
+                android:id="@+id/card_view_search"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -47,7 +47,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/info_text_settings1"
+                    android:id="@+id/info_text_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
