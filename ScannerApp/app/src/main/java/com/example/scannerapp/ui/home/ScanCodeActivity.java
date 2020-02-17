@@ -40,7 +40,7 @@ public class ScanCodeActivity extends AppCompatActivity implements ZXingScannerV
         HomeFragment hf = HomeFragment.getInstance();
         hf.ll.setVisibility(View.VISIBLE);
 
-        FetchDeviceAsyncTask connectMySql = new FetchDeviceAsyncTask(hf.name, hf.desc, hf.ll, hf.error);
+        FetchDeviceAsyncTask connectMySql = new FetchDeviceAsyncTask();
         connectMySql.execute(result.getText());
 
         onBackPressed();
