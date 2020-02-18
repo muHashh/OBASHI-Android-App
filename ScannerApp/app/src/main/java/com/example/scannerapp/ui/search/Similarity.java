@@ -11,24 +11,15 @@ import java.util.List;
  */
 public class Similarity {
 
-    private HashMap<Integer, String> deviceList;
-
-    /**
-     *
-     * @param newDeviceList HashMap with keys integers and values strings. It will be used by
-     *                      getSimilar to calculate the similarity between each of its values
-     *                      and a user query
-     */
-    public Similarity(HashMap<Integer, String> newDeviceList){
-        deviceList = newDeviceList;
-    }
-
     /**
      *
      * @param query A user query, to be compared with the values of deviceList
      * @return An ordered LinkedHashMap, with keys ints and values doubles
      */
-    public LinkedHashMap<Integer, Double> getSimilar(String query){
+    public LinkedHashMap<Integer, Double> getSimilar(HashMap<Integer, String> deviceList, String query){
+        if(deviceList == null || deviceList.isEmpty() || query == "" || query == null){
+            return null;
+        }
         HashMap<Integer, String> names = (HashMap)deviceList.clone();
         for(int key: names.keySet()){
             String name = names.get(key).toLowerCase();
