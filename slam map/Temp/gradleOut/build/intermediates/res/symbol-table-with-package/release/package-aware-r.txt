@@ -1,4 +1,5 @@
-com.DefaultCompany.slammap
+com.example.helloAR3
+drawable app_banner
 id __arcore_cancelButton
 id __arcore_continueButton
 id __arcore_messageText
@@ -7,7 +8,6 @@ mipmap app_icon
 mipmap app_icon_round
 mipmap ic_launcher_background
 mipmap ic_launcher_foreground
-raw keep_arcore
 string __arcore_cancel
 string __arcore_continue
 string __arcore_install_app

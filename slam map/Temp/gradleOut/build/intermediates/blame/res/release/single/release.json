@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/raw_keep_arcore.xml.flat",
-        "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/122545dd0488c30a20ab1272e04d88ea/res/raw/keep_arcore.xml"
-    },
-    {
         "merged": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/mipmap-anydpi-v26_app_icon.xml.flat",
         "source": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/res/mipmap-anydpi-v26/app_icon.xml"
     },
@@ -13,7 +9,11 @@
     },
     {
         "merged": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/layout___arcore_education.xml.flat",
-        "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/122545dd0488c30a20ab1272e04d88ea/res/layout/__arcore_education.xml"
+        "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/layout/__arcore_education.xml"
+    },
+    {
+        "merged": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/drawable-xhdpi_app_banner.png.flat",
+        "source": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/res/drawable-xhdpi/app_banner.png"
     },
     {
         "merged": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/mipmap-mdpi_ic_launcher_foreground.png.flat",

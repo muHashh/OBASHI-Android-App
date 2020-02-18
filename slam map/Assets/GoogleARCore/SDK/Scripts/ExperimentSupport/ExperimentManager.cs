@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------
 // <copyright file="ExperimentManager.cs" company="Google">
 //
-// Copyright 2018 Google LLC. All Rights Reserved.
+// Copyright 2018 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -48,17 +48,14 @@ namespace GoogleARCoreInternal
                 }
                 catch (ReflectionTypeLoadException ex)
                 {
-                    UnityEngine.Debug.Log(
-                        "Unable to load types from assembly:: " + assembly.ToString() + ":: " +
-                        ex.Message);
+                    UnityEngine.Debug.Log("Unable to load types from assembly:: " + assembly.ToString() + ":: "
+                        + ex.Message);
                 }
             }
 
             foreach (var type in allTypes)
             {
-                if (!type.IsClass ||
-                    type.IsAbstract ||
-                    !typeof(ExperimentBase).IsAssignableFrom(type))
+                if (!type.IsClass || type.IsAbstract || !typeof(ExperimentBase).IsAssignableFrom(type))
                 {
                     continue;
                 }
@@ -67,6 +64,8 @@ namespace GoogleARCoreInternal
             }
         }
 
+        private delegate void OnBeforeSetConfigurationCallback(IntPtr sessionHandhle, IntPtr configHandle);
+
         public static ExperimentManager Instance
         {
             get
@@ -74,6 +73,7 @@ namespace GoogleARCoreInternal
                 if (s_Instance == null)
                 {
                     s_Instance = new ExperimentManager();
+                    LifecycleManager.Instance.EarlyUpdate += s_Instance._OnEarlyUpdate;
                 }
 
                 return s_Instance;
@@ -97,29 +97,17 @@ namespace GoogleARCoreInternal
             }
         }
 
-        public void Initialize()
+        public void OnBeforeSetConfiguration(IntPtr sessionHandle, IntPtr configHandle)
         {
-            LifecycleManager.Instance.EarlyUpdate += s_Instance._OnEarlyUpdate;
-            LifecycleManager.Instance.UpdateSessionFeatures +=
-                s_Instance.OnUpdateSessionFeatures;
-            LifecycleManager.Instance.OnSetConfiguration +=
-                        s_Instance._SetConfiguration;
+            foreach (var experiment in m_Experiments)
+            {
+                experiment.OnBeforeSetConfiguration(sessionHandle, configHandle);
+            }
         }
 
         public bool IsManagingTrackableType(int trackableType)
         {
             return _GetTrackableTypeManager(trackableType) != null;
-        }
-
-        public TrackableHitFlags GetTrackableHitFlags(int trackableType)
-        {
-            ExperimentBase trackableManager = _GetTrackableTypeManager(trackableType);
-            if (trackableManager != null)
-            {
-                return trackableManager.GetTrackableHitFlags(trackableType);
-            }
-
-            return TrackableHitFlags.None;
         }
 
         public Trackable TrackableFactory(int trackableType, IntPtr trackableHandle)
@@ -130,15 +118,8 @@ namespace GoogleARCoreInternal
                 return trackableManager.TrackableFactory(trackableType, trackableHandle);
             }
 
-            return null;
-        }
-
-        public void OnUpdateSessionFeatures()
-        {
-            foreach (var experiment in m_Experiments)
-            {
-                experiment.OnUpdateSessionFeatures();
-            }
+            throw new NotImplementedException(
+                    "ExperimentManager.TrackableFactory::No constructor for requested trackable type.");
         }
 
         private void _OnEarlyUpdate()
@@ -146,14 +127,6 @@ namespace GoogleARCoreInternal
             foreach (var experiment in m_Experiments)
             {
                 experiment.OnEarlyUpdate();
-            }
-        }
-
-        private void _SetConfiguration(IntPtr sessionHandle, IntPtr configHandle)
-        {
-            foreach (var experiment in m_Experiments)
-            {
-                experiment.OnSetConfiguration(sessionHandle, configHandle);
             }
         }
 

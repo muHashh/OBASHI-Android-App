@@ -4,20 +4,20 @@
             "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-fa/values-fa.xml",
             "map": [
                 {
-                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/122545dd0488c30a20ab1272e04d88ea/res/values-fa/values.xml",
+                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-fa/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,234,282,405,531",
-                        "endColumns": "43,47,122,125,93",
-                        "endOffsets": "233,281,404,530,624"
+                        "startOffsets": "190,234,282,373,468",
+                        "endColumns": "43,47,90,94,61",
+                        "endOffsets": "233,281,372,467,529"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,103,155,282,412",
-                        "endColumns": "47,51,126,129,97",
-                        "endOffsets": "98,150,277,407,505"
+                        "startOffsets": "55,103,155,250,349",
+                        "endColumns": "47,51,94,98,65",
+                        "endOffsets": "98,150,245,344,410"
                     }
                 }
             ]

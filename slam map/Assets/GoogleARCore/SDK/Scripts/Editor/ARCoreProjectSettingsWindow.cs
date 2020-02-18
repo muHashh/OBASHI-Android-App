@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------
 // <copyright file="ARCoreProjectSettingsWindow.cs" company="Google">
 //
-// Copyright 2017 Google LLC. All Rights Reserved.
+// Copyright 2017 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,49 +23,73 @@ namespace GoogleARCoreInternal
     using UnityEditor;
     using UnityEngine;
 
-// Only add 'Edit > Project Settings > Google ARCore' menu item in Unity versions prior to 2018.3.
-// In 2018.3 and later, settings are instead made available by ARCoreProjectSettingsProvider.
-#if !UNITY_2018_3_OR_NEWER
     internal class ARCoreProjectSettingsWindow : EditorWindow
     {
-        [MenuItem("Edit/Project Settings/Google ARCore")]
+        [MenuItem("Edit/Project Settings/ARCore")]
         private static void ShowARCoreProjectSettingsWindow()
         {
             ARCoreProjectSettings.Instance.Load();
             Rect rect = new Rect(500, 300, 400, 200);
-            ARCoreProjectSettingsWindow window =
-                GetWindowWithRect<ARCoreProjectSettingsWindow>(rect);
-            window.titleContent = new GUIContent("ARCore Project Settings");
+            ARCoreProjectSettingsWindow window = GetWindowWithRect<ARCoreProjectSettingsWindow>(rect);
+            window.titleContent = new GUIContent("ARCore");
             window.Show();
         }
 
         private void OnGUI()
         {
-            OnGUIHeader();
-            ARCoreProjectSettingsGUI.OnGUI(true);
-            OnGUIFooter();
-
-            if (GUI.changed)
-            {
-                ARCoreProjectSettings.Instance.Save();
-            }
-        }
-
-        private void OnGUIHeader()
-        {
+            GUILayout.BeginVertical();
+            GUILayout.Space(5);
             GUIStyle titleStyle = new GUIStyle(GUI.skin.label);
             titleStyle.alignment = TextAnchor.MiddleCenter;
             titleStyle.stretchWidth = true;
             titleStyle.fontSize = 14;
             titleStyle.fixedHeight = 20;
 
-            GUILayout.Space(EditorGUIUtility.singleLineHeight);
             EditorGUILayout.LabelField("ARCore Project Settings", titleStyle);
-            GUILayout.Space(EditorGUIUtility.singleLineHeight);
-        }
+            GUILayout.Space(15);
 
-        private void OnGUIFooter()
-        {
+            ARCoreProjectSettings.Instance.IsARCoreRequired =
+                EditorGUILayout.Toggle("ARCore Required", ARCoreProjectSettings.Instance.IsARCoreRequired);
+            GUILayout.Space(5);
+
+            ARCoreProjectSettings.Instance.IsInstantPreviewEnabled =
+                EditorGUILayout.Toggle("Instant Preview enabled",
+                                       ARCoreProjectSettings.Instance.IsInstantPreviewEnabled);
+            GUILayout.Space(5);
+            bool newARCoreIOSEnabled =
+                EditorGUILayout.Toggle("iOS Support Enabled",
+                                       ARCoreProjectSettings.Instance.IsIOSSupportEnabled);
+            GUILayout.Space(5);
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.Space(3);
+
+            EditorGUILayout.LabelField("Android Cloud Services API Key", GUILayout.Width(180));
+            ARCoreProjectSettings.Instance.CloudServicesApiKey =
+                EditorGUILayout.TextField(ARCoreProjectSettings.Instance.CloudServicesApiKey);
+            EditorGUILayout.EndHorizontal();
+            GUILayout.Space(5);
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.Space(3);
+
+            EditorGUILayout.LabelField("iOS Cloud Services API Key", GUILayout.Width(180));
+            ARCoreProjectSettings.Instance.IosCloudServicesApiKey =
+                EditorGUILayout.TextField(ARCoreProjectSettings.Instance.IosCloudServicesApiKey);
+
+            EditorGUILayout.EndHorizontal();
+            GUILayout.Space(10);
+
+            if (GUI.changed)
+            {
+                if (newARCoreIOSEnabled != ARCoreProjectSettings.Instance.IsIOSSupportEnabled)
+                {
+                    ARCoreProjectSettings.Instance.IsIOSSupportEnabled = newARCoreIOSEnabled;
+
+                    ARCoreIOSSupportHelper.SetARCoreIOSSupportEnabled(newARCoreIOSEnabled);
+                }
+
+                ARCoreProjectSettings.Instance.Save();
+            }
+
             EditorGUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
             if (GUILayout.Button("Close", GUILayout.Width(50), GUILayout.Height(20)))
@@ -74,7 +98,7 @@ namespace GoogleARCoreInternal
             }
 
             EditorGUILayout.EndHorizontal();
+            GUILayout.EndVertical();
         }
     }
-#endif
 }
