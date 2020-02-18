@@ -23,23 +23,23 @@
             ]
         },
         {
-            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-it_values-it.arsc.flat",
+            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-ar-rXB_values-ar-rXB.arsc.flat",
             "map": [
                 {
-                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-it/values.xml",
+                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-ar-rXB/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,238,289,397,505",
-                        "endColumns": "47,50,107,107,68",
-                        "endOffsets": "237,288,396,504,573"
+                        "startOffsets": "194,245,300,433,566",
+                        "endColumns": "50,54,132,132,70",
+                        "endOffsets": "244,299,432,565,636"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,107,162,274,386",
-                        "endColumns": "51,54,111,111,72",
-                        "endOffsets": "102,157,269,381,454"
+                        "startOffsets": "55,110,169,306,443",
+                        "endColumns": "54,58,136,136,74",
+                        "endOffsets": "105,164,301,438,513"
                     }
                 }
             ]
@@ -67,23 +67,23 @@
             ]
         },
         {
-            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-ar-rXB_values-ar-rXB.arsc.flat",
+            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-it_values-it.arsc.flat",
             "map": [
                 {
-                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-ar-rXB/values.xml",
+                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-it/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
-                        "startOffsets": "194,245,300,433,566",
-                        "endColumns": "50,54,132,132,70",
-                        "endOffsets": "244,299,432,565,636"
+                        "startOffsets": "190,238,289,397,505",
+                        "endColumns": "47,50,107,107,68",
+                        "endOffsets": "237,288,396,504,573"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,110,169,306,443",
-                        "endColumns": "54,58,136,136,74",
-                        "endOffsets": "105,164,301,438,513"
+                        "startOffsets": "55,107,162,274,386",
+                        "endColumns": "51,54,111,111,72",
+                        "endOffsets": "102,157,269,381,454"
                     }
                 }
             ]
@@ -529,28 +529,6 @@
             ]
         },
         {
-            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-hy_values-hy.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-hy/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,239,292,402,519",
-                        "endColumns": "48,52,109,116,63",
-                        "endOffsets": "238,291,401,518,582"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,108,165,279,400",
-                        "endColumns": "52,56,113,120,67",
-                        "endOffsets": "103,160,274,395,463"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-sv_values-sv.arsc.flat",
             "map": [
                 {
@@ -568,6 +546,28 @@
                         "startOffsets": "55,106,161,267,382",
                         "endColumns": "50,54,105,114,68",
                         "endOffsets": "101,156,262,377,446"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-hy_values-hy.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-hy/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,239,292,402,519",
+                        "endColumns": "48,52,109,116,63",
+                        "endOffsets": "238,291,401,518,582"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,108,165,279,400",
+                        "endColumns": "52,56,113,120,67",
+                        "endOffsets": "103,160,274,395,463"
                     }
                 }
             ]
@@ -727,28 +727,6 @@
             ]
         },
         {
-            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-cs_values-cs.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-cs/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "190,237,290,383,478",
-                        "endColumns": "46,52,92,94,64",
-                        "endOffsets": "236,289,382,477,542"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,106,163,260,359",
-                        "endColumns": "50,56,96,98,68",
-                        "endOffsets": "101,158,255,354,423"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-en-rXA_values-en-rXA.arsc.flat",
             "map": [
                 {
@@ -766,6 +744,28 @@
                         "startOffsets": "55,112,173,336,499",
                         "endColumns": "56,60,162,162,82",
                         "endOffsets": "107,168,331,494,577"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-cs_values-cs.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-cs/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "190,237,290,383,478",
+                        "endColumns": "46,52,92,94,64",
+                        "endOffsets": "236,289,382,477,542"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,106,163,260,359",
+                        "endColumns": "50,56,96,98,68",
+                        "endOffsets": "101,158,255,354,423"
                     }
                 }
             ]
@@ -837,28 +837,6 @@
             ]
         },
         {
-            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-es-rPR_values-es-rPR.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-es-rPR/values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8",
-                        "startColumns": "0,0,0,0,0",
-                        "startOffsets": "194,243,295,394,494",
-                        "endColumns": "48,51,98,99,62",
-                        "endOffsets": "242,294,393,493,556"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,108,164,267,371",
-                        "endColumns": "52,55,102,103,66",
-                        "endOffsets": "103,159,262,366,433"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-mk_values-mk.arsc.flat",
             "map": [
                 {
@@ -876,6 +854,28 @@
                         "startOffsets": "55,106,161,263,367",
                         "endColumns": "50,54,101,103,68",
                         "endOffsets": "101,156,258,362,431"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/res/merged/release/values-es-rPR_values-es-rPR.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-es-rPR/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8",
+                        "startColumns": "0,0,0,0,0",
+                        "startOffsets": "194,243,295,394,494",
+                        "endColumns": "48,51,98,99,62",
+                        "endOffsets": "242,294,393,493,556"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,108,164,267,371",
+                        "endColumns": "52,55,102,103,66",
+                        "endOffsets": "103,159,262,366,433"
                     }
                 }
             ]
@@ -2408,16 +2408,16 @@
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "2,2",
-                        "startOffsets": "53,102",
-                        "endColumns": "48,65",
-                        "endOffsets": "99,165"
+                        "startOffsets": "53,100",
+                        "endColumns": "46,65",
+                        "endOffsets": "97,163"
                     },
                     "to": {
                         "startLines": "7,8",
                         "startColumns": "4,4",
-                        "startOffsets": "438,489",
-                        "endColumns": "50,67",
-                        "endOffsets": "484,552"
+                        "startOffsets": "438,487",
+                        "endColumns": "48,67",
+                        "endOffsets": "482,550"
                     }
                 },
                 {
@@ -2450,10 +2450,10 @@
                     "to": {
                         "startLines": "9,11,14",
                         "startColumns": "4,4,4",
-                        "startOffsets": "557,657,795",
+                        "startOffsets": "555,655,793",
                         "endLines": "10,13,17",
                         "endColumns": "8,8,8",
-                        "endOffsets": "652,790,1017"
+                        "endOffsets": "650,788,1015"
                     }
                 }
             ]

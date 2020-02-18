@@ -70,7 +70,7 @@ namespace GoogleARCore.Examples.HelloAR
         /// the application to avoid per-frame allocations.
         /// </summary>
         private List<DetectedPlane> m_AllPlanes = new List<DetectedPlane>();
-
+                    
         /// <summary>
         /// True if the app is in the process of quitting due to an ARCore connection error, otherwise false.
         /// </summary>

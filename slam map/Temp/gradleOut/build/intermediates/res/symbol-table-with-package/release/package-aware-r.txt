@@ -1,12 +1,9 @@
-com.example.helloAR3
-drawable app_banner
+com.obashi.slam
 id __arcore_cancelButton
 id __arcore_continueButton
 id __arcore_messageText
 layout __arcore_education
 mipmap app_icon
-mipmap app_icon_round
-mipmap ic_launcher_background
 mipmap ic_launcher_foreground
 string __arcore_cancel
 string __arcore_continue

@@ -13,21 +13,21 @@ INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/Android
 INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:1-25:12
 INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:1-25:12
 	package
-		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:70-100
+		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:70-95
 		INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml
 		INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:125-150
+		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:120-145
 		INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml
 		INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:101-124
+		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:96-119
 		INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml
 		INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml
 	android:installLocation
-		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:151-191
+		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:2:146-186
 uses-sdk
 ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:3:3-72
 INJECTED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:3:3-72
@@ -61,9 +61,7 @@ MERGED from [:google_ar_required:] /home/hassan/.gradle/caches/transforms-2/file
 	android:label
 		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:4:16-48
 	android:icon
-		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:4:109-140
-	android:banner
-		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:4:71-108
+		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:4:71-102
 	android:isGame
 		ADDED from /home/hassan/cs/csp3-main/slam map/Temp/gradleOut/src/main/AndroidManifest.xml:4:49-70
 activity#com.plugin.speech.pluginlibrary.ActivityClass

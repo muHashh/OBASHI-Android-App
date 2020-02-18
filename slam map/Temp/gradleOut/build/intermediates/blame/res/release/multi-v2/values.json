@@ -8,16 +8,16 @@
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "2,2",
-                        "startOffsets": "53,102",
-                        "endColumns": "48,65",
-                        "endOffsets": "99,165"
+                        "startOffsets": "53,100",
+                        "endColumns": "46,65",
+                        "endOffsets": "97,163"
                     },
                     "to": {
                         "startLines": "7,8",
                         "startColumns": "4,4",
-                        "startOffsets": "438,489",
-                        "endColumns": "50,67",
-                        "endOffsets": "484,552"
+                        "startOffsets": "438,487",
+                        "endColumns": "48,67",
+                        "endOffsets": "482,550"
                     }
                 },
                 {
@@ -50,10 +50,10 @@
                     "to": {
                         "startLines": "9,11,14",
                         "startColumns": "4,4,4",
-                        "startOffsets": "557,657,795",
+                        "startOffsets": "555,655,793",
                         "endLines": "10,13,17",
                         "endColumns": "8,8,8",
-                        "endOffsets": "652,790,1017"
+                        "endOffsets": "650,788,1015"
                     }
                 }
             ]

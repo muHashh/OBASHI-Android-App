@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.helloAR3"
+    package="com.obashi.slam"
     android:installLocation="preferExternal"
     android:targetSandboxVersion="2"
     android:versionCode="1"
@@ -35,7 +35,6 @@
         android:required="true" />
 
     <application
-        android:banner="@drawable/app_banner"
         android:icon="@mipmap/app_icon"
         android:isGame="true"
         android:label="@string/app_name" >
@@ -59,7 +58,7 @@
             android:value="true" />
         <meta-data
             android:name="unity.build-id"
-            android:value="c785d32c-d68a-4fac-8f91-05065bb48330" />
+            android:value="b85c7735-07a9-4e6e-b97f-69d077c9f0da" />
         <meta-data
             android:name="unity.splash-mode"
             android:value="0" />

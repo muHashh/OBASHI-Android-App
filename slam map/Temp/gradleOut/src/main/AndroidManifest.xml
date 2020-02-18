@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.helloAR3" android:versionCode="1" android:versionName="1.0" android:installLocation="preferExternal">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.obashi.slam" android:versionCode="1" android:versionName="1.0" android:installLocation="preferExternal">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="26" />
-  <application android:label="@string/app_name" android:isGame="true" android:banner="@drawable/app_banner" android:icon="@mipmap/app_icon">
+  <application android:label="@string/app_name" android:isGame="true" android:icon="@mipmap/app_icon">
     <activity android:name="com.plugin.speech.pluginlibrary.ActivityClass" android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen" android:label="@string/app_name">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
@@ -11,7 +11,7 @@
     </activity>
     <meta-data android:name="unity.tango-enable" android:value="True" />
     <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
-    <meta-data android:name="unity.build-id" android:value="c785d32c-d68a-4fac-8f91-05065bb48330" />
+    <meta-data android:name="unity.build-id" android:value="b85c7735-07a9-4e6e-b97f-69d077c9f0da" />
     <meta-data android:name="unity.splash-mode" android:value="0" />
     <meta-data android:name="unity.splash-enable" android:value="True" />
   </application>

@@ -9,17 +9,22 @@
     {
         public Text camPoseText;
         //public Text testText;
-        public GameObject m_firstPersonCamera;
+        public GameObject firstPersonCamera;
         public GameObject cameraTarget;   //SpherePointer
         private Vector3 m_prevARPosePosition;
         private bool trackingStarted = false;
+        private List<DetectedPlane> m_AllPlanes = new List<DetectedPlane>();
+        public GameObject Line;
+        
         public void Start()
         {
+            Line.SetActive(false);
             m_prevARPosePosition = Vector3.zero;
         }
         public void Update()
         {
             _QuitOnConnectionErrors();
+
             if (Session.Status != SessionStatus.Tracking)
             {
                 trackingStarted = false;                      // if tracking lost or not initialized
@@ -57,6 +62,33 @@
                 //
 
                 //m_firstPersonCamera.GetComponent<FollowTarget>().targetRot = Frame.Pose.rotation;
+            }
+
+            Session.GetTrackables<DetectedPlane>(m_AllPlanes);
+
+            Touch touch;
+            if(Input.touchCount < 1 || (touch = Input.GetTouch(0)).phase != TouchPhase.Began) {
+                return;
+
+            }
+
+            TrackableHit hit;
+            if(Frame.Raycast(touch.position.x, touch.position.y, TrackableHitFlags.PlaneWithinPolygon, out hit)) {
+
+                Line.SetActive(true);
+
+                Anchor anchor = hit.Trackable.CreateAnchor(hit.Pose);
+
+                Line.transform.position = hit.Pose.position;
+                Line.transform.rotation = hit.Pose.rotation;
+
+                Vector3 camPos = firstPersonCamera.transform.position;
+
+                camPos.y = hit.Pose.position.y;
+
+                Line.transform.LookAt(camPos, Line.transform.up);
+
+                Line.transform.parent = anchor.transform;
             }
         }
         private void _QuitOnConnectionErrors()
