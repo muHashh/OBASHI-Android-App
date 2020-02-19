@@ -40,12 +40,6 @@
                 app:cardBackgroundColor="@color/blackgreyColor"
                 app:cardUseCompatPadding="true">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <TextView
                     android:id="@+id/info_text_1"
@@ -76,12 +70,6 @@
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageView_dev2"
@@ -138,13 +126,6 @@
                 app:cardUseCompatPadding="true">
 
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-
                 <ImageView
                     android:id="@+id/imageView_dev3"
                     android:layout_width="120dp"
@@ -198,13 +179,6 @@
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
 
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageView_dev4"
@@ -260,13 +234,6 @@
                 app:cardUseCompatPadding="true">
 
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
-
                 <ImageView
                     android:id="@+id/imageView_dev5"
                     android:layout_width="120dp"
@@ -319,14 +286,6 @@
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageView_dev6"
