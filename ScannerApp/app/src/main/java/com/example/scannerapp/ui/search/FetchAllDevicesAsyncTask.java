@@ -79,7 +79,7 @@ public class FetchAllDevicesAsyncTask extends AsyncTask<Void, String, HashMap<In
         LinkedHashMap<Integer, Double> orderedDevices = similar.getSimilar(result, query);
         sf.orderedDevices = orderedDevices;
         int i = 0;
-        while(!orderedDevices.isEmpty() && i < 3){
+        while(!orderedDevices.isEmpty() && i < 5){
             int key = orderedDevices.entrySet().iterator().next().getKey();
             orderedDevices.remove(key);
             if(i == 0){
@@ -90,10 +90,18 @@ public class FetchAllDevicesAsyncTask extends AsyncTask<Void, String, HashMap<In
                 sf.button2.setText(result.get(key));
                 sf.button2.setVisibility(View.VISIBLE);
                 sf.button2key = key;
-            }else{
+            }else if(i == 2){
                 sf.button3.setText(result.get(key));
                 sf.button3.setVisibility(View.VISIBLE);
                 sf.button3key = key;
+            }else if(i == 3){
+                sf.button4.setText(result.get(key));
+                sf.button4.setVisibility(View.VISIBLE);
+                sf.button4key = key;
+            }else{
+                sf.button5.setText(result.get(key));
+                sf.button5.setVisibility(View.VISIBLE);
+                sf.button5key = key;
             }
             i++;
         }

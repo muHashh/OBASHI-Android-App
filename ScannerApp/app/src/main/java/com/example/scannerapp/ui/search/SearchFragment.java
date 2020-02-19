@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.scannerapp.R;
@@ -26,9 +27,13 @@ public class SearchFragment extends Fragment {
     Button button1;
     Button button2;
     Button button3;
+    Button button4;
+    Button button5;
     int button1key = 0;
     int button2key = 0;
     int button3key = 0;
+    int button4key = 0;
+    int button5key = 0;
 
     public static SearchFragment getInstance() {
         return INSTANCE;
@@ -47,8 +52,6 @@ public class SearchFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("error123456", "hello there");
-                HomeFragment hf = HomeFragment.getInstance();
                 FetchDeviceAsyncTask fetchDevice = new FetchDeviceAsyncTask();
                 fetchDevice.execute(String.valueOf(button1key));
             }
@@ -69,6 +72,24 @@ public class SearchFragment extends Fragment {
             public void onClick(View view) {
                 FetchDeviceAsyncTask fetchDevice = new FetchDeviceAsyncTask();
                 fetchDevice.execute(String.valueOf(button3key));
+            }
+        });
+        button4 = root.findViewById(R.id.result4);
+        button4.setVisibility(View.GONE);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FetchDeviceAsyncTask fetchDevice = new FetchDeviceAsyncTask();
+                fetchDevice.execute(String.valueOf(button4key));
+            }
+        });
+        button5 = root.findViewById(R.id.result5);
+        button5.setVisibility(View.GONE);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FetchDeviceAsyncTask fetchDevice = new FetchDeviceAsyncTask();
+                fetchDevice.execute(String.valueOf(button5key));
             }
         });
         FetchAllDevicesAsyncTask fetchDevices = new FetchAllDevicesAsyncTask("server");
