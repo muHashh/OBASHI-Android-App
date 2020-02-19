@@ -20,19 +20,38 @@
 
         <meta-data android:name="com.google.ar.core" android:value="required" />
 
-        <activity android:name=".ScanCodeActivity"></activity>
-        <activity android:name=".Ar"></activity>
-        <activity android:name=".CardOpen"></activity>
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ui.home.ScanCodeActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".ui.ar.ArActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".ui.about.CardOpenActivity"></activity>
+
+        <activity android:name=".ui.home.FetchDeviceAsyncTask"></activity>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.SearchResultsActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
         </activity>
     </application>
 

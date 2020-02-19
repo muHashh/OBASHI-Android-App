@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/darkgrey">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,10 +22,9 @@
             android:orientation="vertical"
             tools:ignore="UselessParent">
 
-            <!-- Block of codes for CARDVIEWS -->
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_view_app1"
+            <!-- Block of codes for ABOUT HEADING -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_about_app1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -38,25 +38,20 @@
                 app:cardBackgroundColor="@color/blackgreyColor"
                 app:cardUseCompatPadding="true">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
                 <TextView
                     android:id="@+id/info_text_settings1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="About The App"
+                    android:textColor="@color/gold"
                     android:textSize="30dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb101"
-                    android:text="About The App" />
-            </androidx.cardview.widget.CardView>
+                    android:textStyle="bold" />
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_view_app2"
+            <!-- Block of codes for ABOUT DETAILS APP -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_about_app2"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -65,29 +60,21 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/colorPrimary">
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
+                app:cardUseCompatPadding="true">
 
                 <TextView
                     android:id="@+id/info_text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="*App Description and what it is meant to achieve.*"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
-                    android:textSize="17dp"
-                    android:text="*App Description and what it is meant to achieve.*" />
-            </androidx.cardview.widget.CardView>
+                    android:textSize="17dp" />
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </RelativeLayout>

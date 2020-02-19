@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.fragment.app.Fragment;
 
 import com.example.scannerapp.MainActivity;
-import com.example.scannerapp.Ar;
 import com.example.scannerapp.R;
 
 public class ArAppFragment extends Fragment {
@@ -26,7 +25,7 @@ public class ArAppFragment extends Fragment {
                 ViewModelProviders.of(this).get(ArAppViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ar, container, false);
 
-        startActivityForResult(new Intent(getActivity(), Ar.class), 1);
+        startActivityForResult(new Intent(getActivity(), ArActivity.class), 1);
 
         return root;
     }

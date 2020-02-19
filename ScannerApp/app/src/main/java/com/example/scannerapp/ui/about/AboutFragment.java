@@ -10,25 +10,25 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.scannerapp.CardOpen;
 import com.example.scannerapp.R;
 
 public class AboutFragment extends Fragment{
 
     private AboutViewModel aboutViewModel;
+    View root;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         aboutViewModel = ViewModelProviders.of(this).get(AboutViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_about, container, false);
+        root = inflater.inflate(R.layout.fragment_about, container, false);
 
         CardView card1 = root.findViewById(R.id.card_view1);
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CardOpen.class);
+                Intent intent = new Intent(view.getContext(), CardOpenActivity.class);
                 intent.putExtra("LAYOUT_NAME", R.layout.card_app);
                 startActivity(intent);
 
@@ -39,10 +39,9 @@ public class AboutFragment extends Fragment{
         card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CardOpen.class);
+                Intent intent = new Intent(view.getContext(), CardOpenActivity.class);
                 intent.putExtra("LAYOUT_NAME", R.layout.card_devs);
                 startActivity(intent);
-
             }
         });
 
@@ -50,7 +49,7 @@ public class AboutFragment extends Fragment{
         card4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), CardOpen.class);
+                Intent intent = new Intent(view.getContext(), CardOpenActivity.class);
                 intent.putExtra("LAYOUT_NAME", R.layout.card_tech);
                 startActivity(intent);
 

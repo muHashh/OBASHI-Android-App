@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/darkgrey">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +23,7 @@
             android:layout_marginBottom="10dp"
             tools:ignore="UselessParent">
 
-            <!-- Block of codes for CARDVIEWS -->
+            <!-- Block of codes for TECHNOLOGIES CARD -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_tech1"
@@ -39,22 +40,18 @@
                 app:cardBackgroundColor="@color/blackgreyColor"
                 app:cardUseCompatPadding="true">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
                 <TextView
                     android:id="@+id/info_text_settings1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="Technology Used"
+                    android:textColor="@color/gold"
                     android:textSize="30dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb101"
-                    android:text="Technology Used" />
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
+
+            <!-- Block of codes for TECHNOLOGIES DETAILS CARD -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_tech2"
@@ -66,36 +63,25 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
                 app:cardUseCompatPadding="true">
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <TextView
                     android:id="@+id/info_text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:textAlignment="gravity"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
-                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
-                    android:paddingLeft="8dp"
-                    android:textColor="@color/whiteColor"
-                    android:textSize="17dp"
+                    android:paddingBottom="8dp"
                     android:text="ARCore is a software development kit
 developed by Google that allows for augmented reality applications to be built.
                     \n\nLAMP is an archetypal model of web service stacks, named as an acronym of the names
@@ -107,7 +93,11 @@ with ports to other languages. It has support for 1D product, 1D industrial, and
 simultaneous localization and mapping is the computational problem of constructing or updating a map of an unknown
 environment while simultaneously keeping track of an agent's location within it
                     \n\nUnity is a cross-platform game engine developed by Unity Technologies, first announced and released
-in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine." />
+in June 2005 at Apple Inc.'s Worldwide Developers Conference as a Mac OS X-exclusive game engine."
+                    android:textAlignment="gravity"
+                    android:textColor="@color/whiteColor"
+                    android:textColorLink="#2196F3"
+                    android:textSize="17dp" />
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>

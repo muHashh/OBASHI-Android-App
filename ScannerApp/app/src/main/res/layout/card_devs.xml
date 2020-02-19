@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/darkgrey">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +23,7 @@
             android:layout_marginBottom="10sp"
             tools:ignore="UselessParent">
 
-            <!-- Block of codes for CARDVIEWS -->
+            <!-- Block of codes for DEV HEADING -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs1"
@@ -39,22 +40,20 @@
                 app:cardBackgroundColor="@color/blackgreyColor"
                 app:cardUseCompatPadding="true">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
-                </LinearLayout>
                 <TextView
                     android:id="@+id/info_text_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:text="Meet The Developers"
+                    android:textColor="@color/gold"
                     android:textSize="30dp"
-                    android:textStyle="bold"
-                    android:textColor="#ffb101"
-                    android:text="Meet The Developers" />
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
+
+
+            <!-- Block of codes for DEV INFO -->
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_view_devs2"
@@ -66,17 +65,11 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardUseCompatPadding="true">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageView_dev2"
@@ -88,15 +81,15 @@
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:paddingBottom="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="right"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
                     android:text="Hassan Shahid"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
@@ -106,12 +99,12 @@
                     android:id="@+id/info_text2.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="end|bottom"
-                    android:textAlignment="textEnd"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
                     android:text="Backend / AR Developer\n2325611s@student.gla.ac.uk"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
             </androidx.cardview.widget.CardView>
@@ -127,18 +120,11 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardUseCompatPadding="true">
 
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageView_dev3"
@@ -146,34 +132,34 @@
                     android:layout_height="120dp"
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/dev_img"
-                    android:paddingTop="8dp"
                     android:paddingLeft="8dp"
-                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:paddingRight="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    android:paddingBottom="8dp"
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="right"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:text="José Rodríguez"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
-                    android:textSize="25dp"
-                    android:text="José Rodríguez" />
+                    android:textSize="25dp" />
 
                 <TextView
                     android:id="@+id/info_text3.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="end|bottom"
-                    android:textAlignment="textEnd"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
                     android:text="Network / Database Developer\n2300456r@student.gla.ac.uk"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
             </androidx.cardview.widget.CardView>
@@ -188,18 +174,11 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardUseCompatPadding="true">
 
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageView_dev4"
@@ -207,34 +186,34 @@
                     android:layout_height="120dp"
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/dev_img"
-                    android:paddingTop="8dp"
                     android:paddingLeft="8dp"
-                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:paddingRight="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    android:paddingBottom="8dp"
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="right"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Nico Sperry"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
-                    android:textSize="25dp"
-                    android:text="Nico Sperry" />
+                    android:textSize="25dp" />
 
                 <TextView
                     android:id="@+id/info_text4.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="end|bottom"
-                    android:textAlignment="textEnd"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
                     android:text="Backend / AR developer\n2306707s@student.gla.ac.uk"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
             </androidx.cardview.widget.CardView>
@@ -249,18 +228,11 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardUseCompatPadding="true">
 
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageView_dev5"
@@ -268,34 +240,34 @@
                     android:layout_height="120dp"
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/dev_img"
-                    android:paddingTop="8dp"
                     android:paddingLeft="8dp"
-                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:paddingRight="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    android:paddingBottom="8dp"
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="right"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Steg Considine"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
-                    android:textSize="25dp"
-                    android:text="Stephen Considine" />
+                    android:textSize="25dp" />
 
                 <TextView
                     android:id="@+id/info_text5.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="end|bottom"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Quality Control Developer\n2324936c@student.gla.ac.uk"
                     android:textAlignment="textEnd"
-                    android:text="Integration / Quality Control Developer\n2324936c@student.gla.ac.uk"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
             </androidx.cardview.widget.CardView>
@@ -310,18 +282,10 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 app:cardCornerRadius="5dp"
                 app:cardElevation="5dp"
-                app:cardUseCompatPadding="true"
-                app:cardBackgroundColor="@color/colorPrimary">
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                </LinearLayout>
+                app:cardUseCompatPadding="true">
 
                 <ImageView
                     android:id="@+id/imageView_dev6"
@@ -329,34 +293,34 @@
                     android:layout_height="120dp"
                     android:layout_gravity="center_vertical"
                     android:contentDescription="@string/dev_img"
-                    android:paddingTop="8dp"
                     android:paddingLeft="8dp"
-                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
                     android:paddingRight="8dp"
-                    app:srcCompat="@mipmap/sho" />
+                    android:paddingBottom="8dp"
+                    app:srcCompat="@drawable/ic_dev" />
 
                 <TextView
                     android:id="@+id/info_text6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="right"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Shourya Verma"
                     android:textAlignment="center"
                     android:textColor="@color/whiteColor"
-                    android:textSize="25dp"
-                    android:text="Shourya Verma" />
+                    android:textSize="25dp" />
 
                 <TextView
                     android:id="@+id/info_text6.1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:paddingRight="30dp"
                     android:layout_gravity="end|bottom"
-                    android:textAlignment="textEnd"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
                     android:text="Frontend Developer\n230843v@student.gla.ac.uk"
+                    android:textAlignment="textEnd"
                     android:textColor="@color/whiteColor"
                     android:textSize="12dp" />
             </androidx.cardview.widget.CardView>

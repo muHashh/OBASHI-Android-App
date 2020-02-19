@@ -10,9 +10,17 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.testing.FragmentScenario;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.rule.GrantPermissionRule;
 
+import com.example.scannerapp.ui.ar.ArAppFragment;
+import com.example.scannerapp.ui.home.ScanCodeActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import static androidx.test.espresso.Espresso.onView;
@@ -20,6 +28,8 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 
 public class MainActivityTest {
@@ -82,6 +92,29 @@ public class MainActivityTest {
         Activity scanCode = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
         assertNotNull(scanCode);
     }
+
+    /*
+    @Test
+    public void testAr() {
+        //Camera test = new Camera();
+
+        DrawerLayout dlContainer = mainActivity.findViewById(R.id.drawer_layout);
+        //test.rotateX(100);
+        assertNotNull(dlContainer);
+
+        NavController mockNavController = mock(NavController.class);
+
+        FragmentScenario<ArAppFragment> arScenario = FragmentScenario.launchInContainer(ArAppFragment.class);
+
+        arScenario.onFragment(fragment -> Navigation.setViewNavController(fragment.requireView(), mockNavController));
+
+        onView(ViewMatchers.withId(R.id.nav_ar)).perform(ViewActions.click());
+        verify(mockNavController).navigate(R.id.main_fragment);
+        //View view = mainActivity.findViewById(R.id.nav_ar);
+        //assertNotNull(view);
+
+    }
+    */
 
     //Reset activity to null after every test
     @After
