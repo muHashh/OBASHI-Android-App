@@ -38,6 +38,7 @@ public class HomeFragment extends Fragment {
     LinearLayout ll;
     LinearLayout error;
     TextView name;
+    TextView errorName;
     TextView desc;
 
     public static HomeFragment getInstance() {
@@ -58,6 +59,7 @@ public class HomeFragment extends Fragment {
 
         error = root.findViewById(R.id.error);
         error.setVisibility(View.GONE);
+        errorName = root.findViewById(R.id.errorMessage);
 
         name = root.findViewById(R.id.machine_name_view);
         desc = root.findViewById(R.id.description);
