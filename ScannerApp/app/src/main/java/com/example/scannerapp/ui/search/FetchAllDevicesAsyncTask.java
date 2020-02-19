@@ -80,19 +80,22 @@ public class FetchAllDevicesAsyncTask extends AsyncTask<Void, String, HashMap<In
         sf.orderedDevices = orderedDevices;
         int i = 0;
         while(!orderedDevices.isEmpty() && i < 3){
-            i++;
             int key = orderedDevices.entrySet().iterator().next().getKey();
             orderedDevices.remove(key);
             if(i == 0){
                 sf.button1.setText(result.get(key));
                 sf.button1.setVisibility(View.VISIBLE);
+                sf.button1key = key;
             }else if(i == 1){
                 sf.button2.setText(result.get(key));
                 sf.button2.setVisibility(View.VISIBLE);
+                sf.button2key = key;
             }else{
                 sf.button3.setText(result.get(key));
                 sf.button3.setVisibility(View.VISIBLE);
+                sf.button3key = key;
             }
+            i++;
         }
     }
 
