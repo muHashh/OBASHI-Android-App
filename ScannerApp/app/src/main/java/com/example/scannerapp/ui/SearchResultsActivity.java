@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.example.scannerapp.ui.search.FetchAllDevicesAsyncTask;
 
 public class SearchResultsActivity extends Activity {
 
@@ -22,7 +25,9 @@ public class SearchResultsActivity extends Activity {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            //use the query to search your data
+            Log.e("error", query);
+            FetchAllDevicesAsyncTask search = new FetchAllDevicesAsyncTask(query);
+            search.execute();
         }
     }
 

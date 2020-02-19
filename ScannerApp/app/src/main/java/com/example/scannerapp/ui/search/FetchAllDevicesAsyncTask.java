@@ -1,10 +1,13 @@
 package com.example.scannerapp.ui.search;
 
 import android.os.AsyncTask;
+import android.view.View;
+
 import com.example.scannerapp.ConnectionHelper.HttpJsonParser;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * Class used for retrieving all devices that can be found on the database.
@@ -12,11 +15,16 @@ import java.util.HashMap;
  * As of now, it can only be use by SearchFragment, as it has to update a field in that class
  */
 public class FetchAllDevicesAsyncTask extends AsyncTask<Void, String, HashMap<Integer, String>>{
-    HashMap<Integer, String> data = new HashMap<>(); //HashMap that will contain the data to be used
+    private HashMap<Integer, String> data = new HashMap<>(); //HashMap that will contain the data to be used
     // Constant that will be used to add an error message to data
     // As no device can have key -1, we can check if there is some problem by looking if
     // ERROR_KEY is a key of data
     private final int ERROR_KEY = -1;
+    private String query;
+
+    public FetchAllDevicesAsyncTask(String newQuery){
+        query = newQuery;
+    }
 
     @Override
     protected HashMap<Integer, String> doInBackground(Void... params) {
@@ -67,6 +75,25 @@ public class FetchAllDevicesAsyncTask extends AsyncTask<Void, String, HashMap<In
     protected void onPostExecute(HashMap<Integer, String> result) {
         SearchFragment sf = SearchFragment.getInstance();
         sf.devices = result;
+        Similarity similar = new Similarity();
+        LinkedHashMap<Integer, Double> orderedDevices = similar.getSimilar(result, query);
+        sf.orderedDevices = orderedDevices;
+        int i = 0;
+        while(!orderedDevices.isEmpty() && i < 3){
+            i++;
+            int key = orderedDevices.entrySet().iterator().next().getKey();
+            orderedDevices.remove(key);
+            if(i == 0){
+                sf.button1.setText(result.get(key));
+                sf.button1.setVisibility(View.VISIBLE);
+            }else if(i == 1){
+                sf.button2.setText(result.get(key));
+                sf.button2.setVisibility(View.VISIBLE);
+            }else{
+                sf.button3.setText(result.get(key));
+                sf.button3.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
 }
