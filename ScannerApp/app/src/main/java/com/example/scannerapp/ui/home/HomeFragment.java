@@ -67,6 +67,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ArActivity.class);
+                intent.putExtra("NODE", "prev");
                 startActivity(intent);
 
             }
@@ -77,8 +78,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ArActivity.class);
+                intent.putExtra("NODE", "next");
                 startActivity(intent);
-
             }
         });
 

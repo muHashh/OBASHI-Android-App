@@ -6,6 +6,7 @@ import android.app.ActivityManager;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
@@ -19,15 +20,18 @@ import com.example.scannerapp.R;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Plane;
 import com.google.ar.core.Frame;
+import com.google.ar.core.Pose;
 import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.FrameTime;
+import com.google.ar.sceneform.math.Quaternion;
 import com.google.ar.sceneform.rendering.ShapeFactory;
 import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.Color;
 import com.google.ar.sceneform.rendering.MaterialFactory;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.TransformableNode;
 
 import java.util.Collection;
 
@@ -39,6 +43,7 @@ public class ArActivity extends AppCompatActivity {
     private ModelRenderable MRenderable;
     private ArFragment arFragment;
     private boolean isModelPlaced;
+    private String type;
 
     @RequiresApi(api = VERSION_CODES.N)
     @Override
@@ -50,6 +55,13 @@ public class ArActivity extends AppCompatActivity {
         }
 
         verifyPermissions();
+
+        Intent i = getIntent();
+        type = i.getStringExtra("NODE");
+
+        if(type == null) {
+            type = "null";
+        }
 
 
     }
@@ -64,28 +76,34 @@ public class ArActivity extends AppCompatActivity {
 
         Collection<Plane> planes = frame.getUpdatedTrackables(Plane.class);
 
+
+
         for (Plane plane: planes) {
             if (plane.getTrackingState() == TrackingState.TRACKING) {
                 Anchor anchor = plane.createAnchor(plane.getCenterPose());
 
-                makeCube(anchor, new Vector3(0f, 0.1f, 0f));
-                makePipe(anchor, new Vector3(0.0f, 0.7f, 0.0f));
-                makeCube(anchor, new Vector3(0f, 1.2f, 0f));
-                makePipe(anchor, new Vector3(0.0f, -0.5f, 0.0f));
-                makeCube(anchor, new Vector3(0f, -1f, 0f));
 
+                makeCube(anchor, new Vector3(0f, 0f, 0f), new Color(new Color(0, 1, 0, (float)0.5)));
+                if(type.equals("prev") || type.equals("null")) {
+                    makePipe(anchor, new Vector3(0f, 0.5f, 0f),new Color(new Color(1, 0, 0, (float)0.5)));
+                    makeCube(anchor, new Vector3(-1f, 0f, 0f), new Color(new Color(1, 0, 0, (float)0.5)));
+                }
+                if(type.equals("next") || type.equals("null")) {
+                    makePipe(anchor, new Vector3(0f, -0.5f, 0f),new Color(new Color(0, 0, 1, (float)0.5)));
+                    makeCube(anchor, new Vector3(1f, 0f, 0f), new Color(new Color(0, 0, 1, (float)0.5)));
+                }
 
                 break;
             }
         }
     }
 
-    private void makeCube(Anchor anchor, Vector3 pos) {
+    private void makeCube(Anchor anchor, Vector3 pos, Color color) {
 
         isModelPlaced = true;
 
         MaterialFactory
-                .makeTransparentWithColor(this, new Color(new Color(1, 1, 1, (float)0.5)))
+                .makeTransparentWithColor(this, color)
                 .thenAccept(material -> {
 
                     ModelRenderable cubeRenderable = ShapeFactory.makeCube(new Vector3(0.2f, 0.2f, 0.2f),
@@ -97,18 +115,21 @@ public class ArActivity extends AppCompatActivity {
                 });
     }
 
-    private void makePipe(Anchor anchor, Vector3 pos) {
+    private void makePipe(Anchor anchor, Vector3 pos, Color color) {
 
         isModelPlaced = true;
 
         MaterialFactory
-                .makeTransparentWithColor(this, new Color(new Color(1, 1, 1, (float)0.5)))
+                .makeTransparentWithColor(this, color)
                 .thenAccept(material -> {
 
                     ModelRenderable pipeRenderable = ShapeFactory.makeCylinder((float)0.01, (float)1, pos,  material);
-
                     AnchorNode anchorNode = new AnchorNode(anchor);
-                    anchorNode.setRenderable(pipeRenderable);
+                    TransformableNode node = new TransformableNode(arFragment.getTransformationSystem());
+                    node.setLocalRotation(Quaternion.axisAngle(new Vector3(0, 0, 1f), 90));
+                    node.setRenderable(pipeRenderable);
+                    node.setParent(anchorNode);
+
                     arFragment.getArSceneView().getScene().addChild(anchorNode);
                 });
     }
