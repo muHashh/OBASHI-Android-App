@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------
 // <copyright file="SuppressMemoryAllocationErrorAttribute.cs" company="Google">
-// Copyright 2018 Google LLC. All Rights Reserved.
+// Copyright 2018 Google Inc. All Rights Reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
@@ -16,8 +16,7 @@ namespace GoogleARCoreInternal
     public class SuppressMemoryAllocationErrorAttribute : Attribute
     {
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="GoogleARCoreInternal.SuppressMemoryAllocationErrorAttribute"/> class.
+        /// Initializes a new instance of the <see cref="T:GoogleARCoreInternal.SuppressMemoryAllocationErrorAttribute"/> class.
         /// </summary>
         public SuppressMemoryAllocationErrorAttribute()
         {

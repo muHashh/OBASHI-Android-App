@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------
 // <copyright file="ARKitHelper.cs" company="Google">
 //
-// Copyright 2018 Google LLC. All Rights Reserved.
+// Copyright 2018 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -73,18 +73,8 @@ namespace GoogleARCore.Examples.CloudAnchors
 
                 hitPose.position = UnityARMatrixOps.GetPosition(m_HitResultList[minDistanceIndex].worldTransform);
 
-                // Original ARKit hit pose is the plane rotation.
-                Quaternion planeRotation = UnityARMatrixOps.GetRotation(
-                    m_HitResultList[minDistanceIndex].worldTransform);
-
-                // Try to match the hit rotation to the one ARCore uses.
-                Vector3 planeNormal = planeRotation * Vector3.up;
-                Vector3 rayDir = camera.ViewportPointToRay(viewportPoint).direction;
-                Vector3 planeProjection = Vector3.ProjectOnPlane(rayDir, planeNormal);
-                Vector3 forwardDir = -planeProjection.normalized;
-
-                Quaternion hitRotation = Quaternion.LookRotation(forwardDir, planeNormal);
-                hitPose.rotation = hitRotation;
+                // Point the hitPose rotation roughly away from the raycast/camera to match ARCore.
+                hitPose.rotation.eulerAngles = new Vector3(0.0f, camera.transform.eulerAngles.y, 0.0f);
 
                 return true;
             }
@@ -104,17 +94,6 @@ namespace GoogleARCore.Examples.CloudAnchors
             anchorGO.transform.position = pose.position;
             anchorGO.transform.rotation = pose.rotation;
             return anchor;
-        }
-
-        /// <summary>
-        /// Sets the world origin.
-        /// </summary>
-        /// <param name="transform">Transform of the new world origin.</param>
-        public void SetWorldOrigin(Transform transform)
-        {
-#if ARCORE_IOS_SUPPORT
-            UnityARSessionNativeInterface.GetARSessionNativeInterface().SetWorldOrigin(transform);
-#endif
         }
     }
 }

@@ -4,20 +4,20 @@
             "outputFile": "/home/hassan/cs/csp3-main/slam map/Temp/gradleOut/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
-                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/122545dd0488c30a20ab1272e04d88ea/res/values-zh-rTW/values.xml",
+                    "source": "/home/hassan/.gradle/caches/transforms-2/files-2.1/cd1cab6582439c5333be8de8280316dd/res/values-zh-rTW/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8",
                         "startColumns": "0,0,0,0,0",
-                        "startOffsets": "194,237,282,373,465",
-                        "endColumns": "42,44,90,91,73",
-                        "endOffsets": "236,281,372,464,538"
+                        "startOffsets": "194,237,282,351,422",
+                        "endColumns": "42,44,68,70,56",
+                        "endOffsets": "236,281,350,421,478"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,102,151,246,342",
-                        "endColumns": "46,48,94,95,77",
-                        "endOffsets": "97,146,241,337,415"
+                        "startOffsets": "55,102,151,224,299",
+                        "endColumns": "46,48,72,74,60",
+                        "endOffsets": "97,146,219,294,355"
                     }
                 }
             ]

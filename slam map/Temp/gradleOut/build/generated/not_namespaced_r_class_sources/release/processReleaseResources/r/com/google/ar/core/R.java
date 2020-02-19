@@ -21,18 +21,13 @@ public final class R {
 
         public static final int __arcore_education = 0x7f020000;
     }
-    public static final class raw {
-        private raw() {}
-
-        public static final int keep_arcore = 0x7f040000;
-    }
     public static final class string {
         private string() {}
 
-        public static final int __arcore_cancel = 0x7f050000;
-        public static final int __arcore_continue = 0x7f050001;
-        public static final int __arcore_install_app = 0x7f050002;
-        public static final int __arcore_install_feature = 0x7f050003;
-        public static final int __arcore_installing = 0x7f050004;
+        public static final int __arcore_cancel = 0x7f040000;
+        public static final int __arcore_continue = 0x7f040001;
+        public static final int __arcore_install_app = 0x7f040002;
+        public static final int __arcore_install_feature = 0x7f040003;
+        public static final int __arcore_installing = 0x7f040004;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.scannerapp;
 
 import android.os.Bundle;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -9,7 +10,8 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import android.view.Menu;
+
+import android.view.MenuInflater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
 //        return true;
 //
 //    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_button, menu);
+
+//        SearchManager searchManager =
+//                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//        SearchView searchView =
+//                (SearchView) menu.findItem(R.id.search).getActionView();
+////        searchView.setSearchableInfo(
+////                searchManager.getSearchableInfo(getComponentName()));
+
+        return true;
+    }
 
     @Override
     public boolean onSupportNavigateUp() {
