@@ -6,15 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.scannerapp.R;
 import com.example.scannerapp.ui.home.FetchDeviceAsyncTask;
-import com.example.scannerapp.ui.home.HomeFragment;
 
 import java.util.HashMap;
 
@@ -29,11 +28,13 @@ public class SearchFragment extends Fragment {
     Button button3;
     Button button4;
     Button button5;
+    Button searchButton;
     int button1key = 0;
     int button2key = 0;
     int button3key = 0;
     int button4key = 0;
     int button5key = 0;
+    String query;
 
     public static SearchFragment getInstance() {
         return INSTANCE;
@@ -92,9 +93,16 @@ public class SearchFragment extends Fragment {
                 fetchDevice.execute(String.valueOf(button5key));
             }
         });
-        FetchAllDevicesAsyncTask fetchDevices = new FetchAllDevicesAsyncTask("server");
-        fetchDevices.execute();
-
+        EditText searchText = root.findViewById(R.id.search_text);
+        searchButton = root.findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("error123", searchText.toString());
+                FetchAllDevicesAsyncTask fetchDevices = new FetchAllDevicesAsyncTask(searchText.getText().toString());
+                fetchDevices.execute();
+            }
+        });
         return root;
     }
 }
